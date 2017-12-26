@@ -2,5 +2,8 @@
 //= require bootstrap
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require simplemde.min
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.en-GB.js
+//= require filterrific/filterrific-jquery
+//= require_tree .

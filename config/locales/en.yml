@@ -12,9 +12,15 @@ en:
   description: "The coolest website for promoting, checking, and joining events in Vietnam"
   success: "Successful"
   event_created: "Event created"
-  update_false: "UPdate false"
+  update_false: "Update false"
   comment_false: "Your comment couldn't be created"
   comment_delete: "Comment has been deleted"
+  you_failed: "You failed"
+  profile_updated: "Your profile has been updated"
+  sort_date_create_desc: "Created date (newest first)"
+  sort_date_create_asc: "Created date (oldest first)"
+  sort_date_start_desc: "Start date (newest first)"
+  sort_date_start_asc: "Start date (oldest first)"
 
   layouts:
     application:
@@ -148,6 +154,7 @@ en:
       setting: "Settings"
       log_out: "Log out"
       log_in: "Log in"
+      more: "More"
 
     new:
       heading: "Create your new event"
@@ -170,8 +177,16 @@ en:
       categories: "Categories"
       leave_comment: "Leave a comment"
       post: " Posted on "
-      start: "START AT "
-      end: "END AT "
+      start: "START AT"
+      end: "END AT"
+
+    index:
+      tit: "Latest Events"
+      city: "City"
+      category: "Category"
+      sorted_by: "Sorted by"
+      event_start_date: "Event Start date"
+      reset_filter: "Reset filter"
 
   comments:
     form:
@@ -251,12 +266,14 @@ en:
   shared:
     prevent:
       content: "You do not have permission on this page"
+
   admin:
     users:
       edit:
         page_name: "Edit role"
         save_changes: "Save changes"
         heading: "Edit role for user: "
+
       index:
         page_name: "Manage Users"
         heading: "All users"
@@ -266,6 +283,7 @@ en:
         role: "Role: "
         joined_date: "Joined: "
         no_user: "no user"
+
       user:
         user_name: "User name: "
         id: "ID: "

@@ -3,11 +3,37 @@ class EventsController < ApplicationController
   before_action :find_event, only: [:show, :edit, :update]
   before_filter :require_permission, only: :edit
   def index
-    @events = Event.all
+    @filterrific = initialize_filterrific(
+      Event,
+      params[:filterrific],
+      select_options: {
+        sorted_by: Event.options_for_sorted_by,
+        with_category_id: Category.options_for_select,
+        with_city_id: City.options_for_select,
+        sorted_by_date_start: Event.options_for_sorted_by
+      },
+      persistence_id: false,
+      default_filter_params: {},
+      available_filters: [:sorted_by, :sorted_by_date_start,
+        :with_category_id, :with_city_id, :with_date_start_gte],
+    ) or return
+
+    @events = @filterrific.find.page(params[:page]).per(12)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
+    rescue ActiveRecord::RecordNotFound => e
+      puts "Had to reset filterrific params: #{e.message}"
+      redirect_to(reset_filterrific_url(format: :html)) and return
+
   end
 
   def show
     @event_categories = @event.event_categories
+    @event_cities = @event.event_cities
     @event_owner = @event.user.name
     @comments = current_user.comments.build if logged_in?
   end

@@ -6,21 +6,61 @@
       </div>
     </div>
     <div class="caption">
-      <h3 class="event_title"><%= event.title %></h3>
+      <h3 class="event_title" ><%= link_to event.title, event %></h3>
       <p class="event_title"><%= event.content %></p>
-      <p>
+      <hr class="hr-event">
+      <div class="row">
+        <div class="col-lg-5 col-md-5">
+          <p class="date"><%= event.date_start %></p>
+        </div>
+        <div class="col-lg-5 col-md-5 col-lg-offset-2">
+          <p class="date"><%= event.date_end %></p>
+        </div>
+      </div>
+      <hr class="hr-event">
+      <div>
         <div class="row equal">
+        <% if logged_in? && like?(event.id) %>
           <div class="col-md-4 col-sm-4 col-lg-4">
-            <i class="fa fa-heart" aria-hidden="true"></i>
+            <%= button_to event_like_events_path(event.id), remote: true, class: "clear" do %>
+              <i class="fa fa-heart fa-heart-press" id="like_<%= event.id %>" aria-hidden="true"></i>
+            <% end %>
           </div>
+        <% else %>
           <div class="col-md-4 col-sm-4 col-lg-4">
-            <i class="fa fa-sign-in" aria-hidden="true"></i>
+            <%= button_to event_like_events_path(event.id), remote: true, class: "clear" do %>
+              <i class="fa fa-heart" id="like_<%= event.id %>" aria-hidden="true"></i>
+            <% end %>
           </div>
+        <% end %>
+        <% if logged_in? && join?(event.id) %>
           <div class="col-md-4 col-sm-4 col-lg-4">
-            <%= link_to "More", event, class: "more btn" %>
+            <%= button_to event_join_events_path(event.id), remote: true, class: "clear" do %>
+              <i class="fa fa-sign-in fa-sign-in-press" id="join_<%= event.id %>" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <%= button_to event_join_events_path(event.id), remote: true, class: "clear" do %>
+              <i class="fa fa-sign-in" id="join_<%= event.id %>" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        <% end %>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <%= link_to event, class: "more btn" do %>
+              <span><%= t ".more" %></span>
+            <% end %>
           </div>
         </div>
-      </p>
+        <div class="row equal">
+          <div class="col-lg-4 col-md-4">
+            <p class="count" id="like_count_<%= event.id %>"><%= event.like_events.count %></p>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <p class="count" id="join_count_<%= event.id %>"><%= event.join_events.count %></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

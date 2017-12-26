@@ -1,0 +1,10 @@
+<div class = "row" id="filterrific_results">
+    <% @events.each do |event| %>
+      <%= render event %>
+    <% end %>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 bottom-paginate">
+        <%= paginate @events %>
+      </div>
+    </div>
+  </div>
