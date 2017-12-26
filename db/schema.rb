@@ -1,4 +1,3 @@
-
 ActiveRecord::Schema.define(version: 20180102014057) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -43,7 +42,7 @@ ActiveRecord::Schema.define(version: 20180102014057) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string "title"
+    t.string  "title"
     t.text "content"
     t.date "date_start"
     t.date "date_end"
