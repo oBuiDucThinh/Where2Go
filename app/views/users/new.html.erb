@@ -1,0 +1,40 @@
+<% provide :title, t(".title") %>
+<h1 class ="text-center" ><%= t ".title"%></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @user do |f| %>
+      <%= f.label t :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label t :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label t :phone %>
+      <%= f.text_field :phone %>
+
+      <%= f.label t :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, t(:password_confirmation) %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.label t(".role")%>
+      <%= f.collection_check_boxes :role, User.roles, :first, :first  do |t| %>
+        <div class = "checkbox">
+          <%= t.check_box %>
+          <%= t.label %>
+        </div>
+      <% end %>
+
+      <%= f.label t(".category") %>
+      <%= f.collection_check_boxes :category_ids, @categories, :id, :name do |t| %>
+        <div class = "checkbox">
+          <%= t.check_box %>
+          <%= t.label %>
+        </div>
+      <% end %>
+
+      <%= f.submit t(".sign_up"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

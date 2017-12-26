@@ -1,4 +1,21 @@
 en:
+  name: "name"
+  email: "email"
+  phone: "phone"
+  password: "password"
+  password_confirmation: "Password confirmation"
+  form_contains: "The form contains "
+  error: "error"
+  acc_activate: Please check your email to activate your account"
+  website: "Where2Go"
+
   layouts:
     application:
       tit: "Where2Go"
+
+  users:
+    new:
+      title: "Sign Up"
+      sign_up: "Sign up"
+      role: "Role"
+      category: "Category"
