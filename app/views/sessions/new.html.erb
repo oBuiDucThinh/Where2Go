@@ -1,0 +1,22 @@
+<h1><%= t ".tit" %></h1>
+<div class="row">
+  <div class="col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email, t(".email_label") %>
+      <%= f.email_field :email, class: "form-control" %>
+
+      <%= f.label :password, t(".pass_label") %>
+      <%= f.password_field :password, class: "form-control" %>
+
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span><%= t ".remember" %></span>
+      <% end %>
+
+      <%= f.submit t(".login"), class: "btn btn-info" %>
+    <% end %>
+
+    <p><%= t ".new?" %><%= link_to t(".sign_up"), "#" %></p>
+  </div>
+</div>
