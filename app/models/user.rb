@@ -14,9 +14,9 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
   validates :phone, presence: true, length: {maximum: Settings.user.phone.maximum}
-  has_secure_password
   validates :password, presence: true, length: {minimum: Settings.user.password.minimum}
-
+  has_secure_password
+  
   def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
       BCrypt::Engine.cost

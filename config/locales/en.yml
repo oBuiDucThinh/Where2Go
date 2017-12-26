@@ -25,6 +25,9 @@ en:
       account: "Account"
       profile: "Profile"
       setting: "Settings"
+      home: "Home"
+      help: "Help"
+      users: "Users"
 
     benefit:
       title1: "BENEFIT"
@@ -83,6 +86,25 @@ en:
       role: "Role"
       category: "Category"
 
+    edit:
+      page_name: "Edit profile"
+      heading: "Update profile"
+      save_changes: "Save changes"
+
+    index:
+      page_name: "Manage users"
+      heading: "All users"
+      
+    update:
+      profile_updated: "Profile updated"
+
+    user:
+      user_name: "User name: "
+      manage_user: "Manage user: "
+      delete: "[delete]"
+      edit: "[edit role]"
+      role: "Role: "
+
   events:
     event:
       dstart: "Date starts: "
@@ -101,3 +123,5 @@ en:
       login: "Log in"
       new? : "New user? "
       sign_up: "Sign up now!"
+      
+  app_name: "Where2Go"

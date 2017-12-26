@@ -1,0 +1,38 @@
+<% provide :title, t(".page_name") %>
+<h1><%= t".heading" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @user do |f| %>
+      <%= render "shared/error_messages" %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.label :category %>
+        <%= f.collection_check_boxes :category_ids, @categories, :id, :name do |t| %>
+        <div class = "checkbox">
+          <%= t.check_box %>
+          <%= t.label %>
+        </div>
+      <% end %>
+
+      <%= f.submit t(".save_changes"), class: "btn btn-primary" %>
+    <% end %>
+    <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <a href="http://gravatar.com/emails" target="_blank"><%= t".change" %></a>
+    </div>
+  </div>
+</div>
