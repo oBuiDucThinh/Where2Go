@@ -1,4 +1,4 @@
-ActiveRecord::Schema.define(version: 20180109142529) do
+ActiveRecord::Schema.define(version: 20180115080544) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -63,6 +63,15 @@ ActiveRecord::Schema.define(version: 20180109142529) do
     t.index ["user_id"], name: "index_join_events_on_user_id"
   end
 
+  create_table "like_events", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_like_events_on_event_id"
+    t.index ["user_id"], name: "index_like_events_on_user_id"
+  end
+
   create_table "user_categories", force: :cascade do |t|
     t.integer "user_id"
     t.integer "category_id"
@@ -73,22 +82,11 @@ ActiveRecord::Schema.define(version: 20180109142529) do
     t.index ["user_id"], name: "index_user_categories_on_user_id"
   end
 
-  create_table "user_events", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "like"
-    t.boolean "join"
-    t.index ["event_id"], name: "index_user_events_on_event_id"
-    t.index ["user_id"], name: "index_user_events_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "phone"
-    t.integer "role", default: 0
+    t.integer"role", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

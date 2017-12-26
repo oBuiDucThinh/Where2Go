@@ -10,14 +10,15 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
   get "/error", to: "static_pages#error"
   resources :events do
-    resources :comments
+    resources :comments, :like_events, :join_events
   end
+
   resources :users
 
   concern :paginatable do
     get "(page/:page)", action: :index, on: :collection, as: ""
   end
-  
+
   namespace :admin do
     resources :users, concerns: :paginatable
   end
