@@ -1,7 +1,7 @@
 <% provide :title, t(".page_name") %>
-<div class = "edit-form">
-  <h1 class = "text-center"><%= t".heading" %></h1>
-  <div class="ro444444w">
+<div class="edit-form event-index">
+  <h1 class="text-center"><%= t".heading" %></h1>
+  <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <%= form_for @user do |f| %>
         <%= render "shared/error_messages" %>
@@ -23,7 +23,7 @@
 
         <%= f.label :category, class: "form-label" %>
           <%= f.collection_check_boxes :category_ids, @categories, :id, :name do |t| %>
-          <div class = "checkbox form-label">
+          <div class="checkbox form-label">
             <%= t.check_box %>
             <%= t.label %>
           </div>

@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
       flash[:info] = t :success
       redirect_to @event
     else
-      render 'static_pages/home'
+      render "static_pages/home"
     end
   end
 

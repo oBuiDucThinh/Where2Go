@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/contact", to: "static_pages#contact"
   get "/signup", to: "users#new"
+  get "/error", to: "static_pages#error"
   resources :events do
     resources :comments
   end

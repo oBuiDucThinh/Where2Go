@@ -11,6 +11,8 @@ en:
   web: "Where2Go"
   description: "The coolest website for promoting, checking, and joining events in Vietnam"
   success: "Successful"
+  event_created: "Event created"
+  update_false: "UPdate false"
 
   layouts:
     application:
@@ -87,6 +89,9 @@ en:
       task2: "code"
       task3: "code"
 
+    error:
+      content: "You do not have permission on this page"
+
   users:
     new:
       title: "Sign Up"
@@ -109,7 +114,7 @@ en:
     index:
       page_name: "Manage users"
       heading: "All users"
-      
+
     update:
       profile_updated: "Profile updated"
 
@@ -139,13 +144,19 @@ en:
 
     new:
       heading: "Create your new event"
-      name: "Event's name cannot be longer than 150 characters"
+      name: "Name"
       location: "Location"
       choose_locatin: "Choose a city"
       category: "Category"
       start: "Day start"
       end: "Day end"
       description: "Detail description"
+      image: "Choose cover image for your event"
+      event_name: "Event name"
+      event_des: "Detail description"
+      des: "Description"
+      upload: "Upload Cover"
+      sub: "Submit"
 
     show:
       search: "Search"
@@ -156,6 +167,17 @@ en:
       end: "END AT "
       comment: "Create a comment"
 
+    edit:
+      heading: "Edit your event"
+      save: "Save your changes"
+      image: "Upload your cover image"
+      event_des: "Detail description"
+      event_name: "Event name"
+      start: "Start date"
+      end: "End date"
+      des: "Description"
+      upload: "Upload Cover"
+
   sessions:
     new:
       tit: "Login"
@@ -165,5 +187,9 @@ en:
       login: "Log in"
       new? : "New user? "
       sign_up: "Sign up now!"
-      
+
   app_name: "Where2Go"
+
+  shared:
+    prevent:
+      content: "You do not have permission on this page"
