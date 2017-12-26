@@ -17,8 +17,8 @@
       <hr>
       <div>
         <h2><%= @event.title %></h2>
-        <p><span class="label label-success"><%= t ".start" %></span><b> <%= @event.date_start %></b></p>
-        <p><span class="label label-warning"><%= t ".end" %></span><b> <%= @event.date_end %></b></p>
+        <p><span class="label label-success"><%= t ".start" %></span> <b><%= @event.date_start %></b></p>
+        <p><span class="label label-warning"><%= t ".end" %></span> <b><%= @event.date_end %></b></p>
         <p class="markdown"><%= markdown @event.content %></p>
       </div>
       <hr>
@@ -62,5 +62,4 @@
       </div>
     </div>
   </div>
-
 </div>

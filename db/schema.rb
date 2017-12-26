@@ -1,4 +1,4 @@
-ActiveRecord::Schema.define(version: 20180109142529) do
+ActiveRecord::Schema.define(version: 20180110124135) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -63,6 +63,15 @@ ActiveRecord::Schema.define(version: 20180109142529) do
     t.index ["user_id"], name: "index_join_events_on_user_id"
   end
 
+  create_table "like_events", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_like_events_on_event_id"
+    t.index ["user_id"], name: "index_like_events_on_user_id"
+  end
+
   create_table "user_categories", force: :cascade do |t|
     t.integer "user_id"
     t.integer "category_id"
@@ -71,17 +80,6 @@ ActiveRecord::Schema.define(version: 20180109142529) do
     t.index ["category_id"], name: "index_user_categories_on_category_id"
     t.index ["user_id", "category_id"], name: "index_user_categories_on_user_id_and_category_id", unique: true
     t.index ["user_id"], name: "index_user_categories_on_user_id"
-  end
-
-  create_table "user_events", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "like"
-    t.boolean "join"
-    t.index ["event_id"], name: "index_user_events_on_event_id"
-    t.index ["user_id"], name: "index_user_events_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
