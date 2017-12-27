@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyText
+  date_start: 2017-12-27 08:50:52
+  date_end: 2017-12-27 08:50:52
+  is_open: false
+  user: 
+
+two:
+  title: MyString
+  content: MyText
+  date_start: 2017-12-27 08:50:52
+  date_end: 2017-12-27 08:50:52
+  is_open: false
+  user: 
