@@ -1,2 +1,45 @@
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
+@import 'font-awesome';
+
+.hero-spacer {
+  margin-top: 50px;
+}
+
+.hero-feature {
+  margin-bottom: 30px;
+}
+
+.event_title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.fa-heart {
+  color: #cc1e27;
+  font-size: 30px !important;
+  display: inline-block;
+}
+
+.fa-sign-in {
+  font-size: 30px !important;
+  width: 50%;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.more {
+  color: black;
+  font-size: 15px;
+}
+
+img.event-banner {
+  width: 100%;
+  overflow: hidden;
+}

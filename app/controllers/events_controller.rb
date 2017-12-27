@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :logged_in_user, only: [:create, :new]
   def index
+    @events = Event.all
   end
 
   def show
@@ -29,6 +30,6 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :content, :date_start, :date_end,
-      :is_open, category_ids:[], city_ids:[])
+      :is_open, :picture, category_ids:[], city_ids:[])
   end
 end

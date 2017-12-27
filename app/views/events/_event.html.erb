@@ -1,22 +1,26 @@
-<div class = "row">
-  <div class="col-lg-6 col-lg-offset-3">
-    <div class="detailThumbnail right">
-      <div class="detailImg">
-        <img src="/assets/event3.jpg" height="100%" >
-        <div class="time">
-          <p><%= event.date_start %></p>
-          <p><%= event.date_end %></p>
-        </div>
+<div class="col-md-3 col-lg-3 col-sm-6 hero-feature">
+  <div class="thumbnail">
+    <div class = "row">
+      <div class = "col-lg-12 col-md-12 col-sm-12">
+        <%= image_tag event.picture, class: "event-banner" %>
       </div>
-      <div class="detailDes">
-        <p class="title"><%= link_to event.title, event %></p>
-        <p class="address"><%= event.content %></p>
-        <p class="create"><%= t ".by" %> <span><%= event.user.name %></span><span class="category"></span></p>
-        <div class = "button-event clearfix pull-right">
-          <%= link_to t(".interest"), "#", class: "btn btn-primary btn-event" %>
-          <%= link_to t(".join"), "#", class: "btn btn-primary btn-event" %>
+    </div>
+    <div class="caption">
+      <h3 class = "event_title"><%= event.title %></h3>
+      <p class = "event_title"><%= event.content %></p>
+      <p>
+        <div class = "row equal">
+          <div class = "col-md-4 col-sm-4 col-lg-4">
+            <i class="fa fa-heart" aria-hidden="true"></i>
+          </div>
+          <div class = "col-md-4 col-sm-4 col-lg-4">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+          </div>
+          <div class = "col-md-4 col-sm-4 col-lg-4">
+            <%= link_to "More", event, class: "more btn" %>
+          </div>
         </div>
-      </div>
+      </p>
     </div>
   </div>
 </div>

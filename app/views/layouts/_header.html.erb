@@ -5,7 +5,7 @@
     </div>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t(".events"), "#" %></li>
+        <li><%= link_to t(".events"), events_path %></li>
         <li><%= link_to t(".contact"), contact_path %></li>
         <% if logged_in? %>
           <li class = "dropdown">

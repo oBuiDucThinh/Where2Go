@@ -11,6 +11,7 @@ class Event < ApplicationRecord
   has_many :cities, through: :event_cities
   accepts_nested_attributes_for :categories
   accepts_nested_attributes_for :cities
+  mount_uploader :picture, PictureUploader
 
   validates :user_id, presence: true
   validates :title, presence: true

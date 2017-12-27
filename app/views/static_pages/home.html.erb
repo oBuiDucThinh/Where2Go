@@ -6,7 +6,9 @@
       <p><%= t ".title1" %></p>
       <p><%= t ".trend" %></p>
     </div>
-    <%= render partial: "events/event", collection: @events %>
+    <div class = "container">
+      <%= render partial: "events/event", collection: @events %>
+    </div>
   </div>
   <div class = "see-more">
     <%= link_to t(".see"), "#", class: "W2Gbutton" %>
