@@ -13,7 +13,8 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+/test/*
 
-# Ignore Database.yml
+#Ignore database
 /config/database.yml
 /config/secrets.yml
