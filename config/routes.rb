@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "/events", to: "events#index"
+  get "/contact", to: "static_pages#contact"
+
+  resources :events
   resources :users
 end
