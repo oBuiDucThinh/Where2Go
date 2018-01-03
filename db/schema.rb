@@ -1,5 +1,4 @@
-ActiveRecord::Schema.define(version: 20171227035104) do
-
+ActiveRecord::Schema.define(version: 20180102014057) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -83,6 +82,7 @@ ActiveRecord::Schema.define(version: 20171227035104) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 end
