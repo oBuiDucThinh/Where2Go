@@ -1,0 +1,40 @@
+<footer id="myFooter">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 footer-img">
+        <%= link_to image_tag("logo.png"), root_path %>
+      </div>
+      <div class="col-sm-2">
+        <h5><%= t ".start" %></h5>
+        <ul>
+          <li><%= link_to t(".home"), root_path %></li>
+          <li><%= link_to t(".signup"), signup_path %></li>
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <h5><%= t ".about" %></h5>
+        <ul>
+          <li><%= link_to t(".info"), contact_path %></li>
+          <li><%= link_to t(".review"), "#" %></li>
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <h5><%= t ".support" %></h5>
+        <ul>
+          <li><%= link_to t(".faq"), "#" %></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <div class="social-networks">
+          <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+          <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+          <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+        </div>
+        <button type="button" class="btn btn-default"><%= t ".contact" %></button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <p><%= t ".copyright" %></p>
+  </div>
+</footer>

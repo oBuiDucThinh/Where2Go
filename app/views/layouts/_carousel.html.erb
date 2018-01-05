@@ -1,0 +1,21 @@
+<section class="container-fluid">
+  <div id="shuffleImage">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="carousel-caption">
+            <h3><b><%= t :web %></b></h3>
+            <p><%= t :description %></p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="carousel-caption">
+            <h3><b><%= t ".heading1" %></b></h3>
+            <p><%= t ".description" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= link_to t(".signup"), login_path, class: "button W2Gbutton" %>
+  </div>
+</section>

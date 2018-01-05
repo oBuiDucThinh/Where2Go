@@ -10,3 +10,7 @@ user:
 
 sessions:
   remember: 1
+
+static_pages:
+  limitation:
+    maximum: 10

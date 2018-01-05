@@ -1,0 +1,299 @@
+@import 'variable_color';
+
+.content {
+  position: relative;
+}
+
+.content2 {
+  background-color:$content2-bg;
+  margin:0;
+  padding:0 0 50px 0;
+}
+
+.description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  margin:30px 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.description p:nth-child(1) {
+  color: $w2g-btn1;
+  font-size: 15px;
+  letter-spacing: 10px;
+}
+
+.description p:nth-child(2) {
+  color: black;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+div.detailThumbnail {
+  background-color: #f0efed;
+  display: flex;
+  height: 110px;
+  margin:10px 0 0 0;
+  position: relative;
+}
+
+div.detailThumbnail div.detailImg {
+  display: inline-block;
+  position: relative;
+  width: 110px;
+}
+
+div.detailImg div.time {
+  background-color: $event-time-bg;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  left: 0;
+  opacity: 0.9;
+  position: absolute;
+  text-align: center;
+  top:0;
+  width: 100%;
+}
+
+div.time p:nth-child(1) {
+  font-size: 40px;
+  letter-spacing: 2px;
+  margin:0;
+  padding-top: 15px;
+}
+
+div.time p:nth-child(2) {
+  font-size: 20px;
+  letter-spacing: 7px;
+}
+
+div.detailThumbnail > div.detailDes {
+  display: inline-block;
+  font-family: 'Nunito', sans-serif;
+  height: 100%;
+  overflow: hidden;
+  padding: 15px 0 0 15px;
+  position: relative;
+}
+
+div.detailDes p {
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+p.title{
+  font-size: 15px;
+  font-weight: 900;
+}
+
+div.detailThumbnail.right {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+div.button-event {
+  float:right;
+  margin-left: 900px;
+}
+
+.btn-event, .btn-see {
+  background-color: $nav-bg;
+  border-radius: 10px;
+  border-radius: 3px;
+  border:1px solid white;
+  box-sizing: border-box;
+  color: white;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+p.create {
+  bottom: 3px;
+  font-size: 12px;
+  position: absolute;
+  span {
+    color:$event-creator-font;
+  }
+}
+
+span.category {
+  left: 280px;
+  position: relative;
+}
+
+div.benefit {
+  margin: auto;
+  position: relative;
+  width: 90%;
+}
+
+div.benefitDetail {
+  background: linear-gradient(to bottom, $bendetail-bg1, $bendetail-bg1, $bendetail-bg1);
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  padding: 200px 0 0 30px;
+  position: absolute;
+  text-overflow: ellipsis;
+  top:0;
+  white-space: wrap;
+  width: 100%;
+}
+
+p.rank {
+  background-color:$w2g-btn1;
+  color: white;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  padding:6px 10px;
+  width: 62px;
+}
+
+p.benefitTitle {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+p.benefitDes {
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  margin-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+}
+
+.see-more {
+  margin: auto;
+  padding: 25px;
+  text-align: center;
+}
+
+/* contact page*/
+.contact {
+  margin-top: 40px;
+  .img-center {
+    margin: 0 auto;
+  }
+}
+
+#myFooter {
+  background-color: #3c3d41;
+  color: white;
+  padding-top: 30px;
+  .footer-copyright {
+    background-color: #333333;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    text-align: center;
+  }
+
+  .footer-img {
+    height: 190px;
+    img {
+      margin-top: -40px;
+      margin-left: -60px;
+    }
+  }
+
+  .navbar-brand {
+    height: 65px;
+    margin-top: 45px;
+  }
+
+  .footer-copyright p {
+    color: #ccc;
+    margin: 10px;
+  }
+
+  ul {
+    line-height: 1.7;
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  h5 {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+
+  a {
+    color: #d2d1d1;
+    text-decoration: none;
+    &:hover, &:focus {
+      color: black;
+      text-decoration: none;
+    }
+  }
+
+  .social-networks {
+    padding-bottom: 16px;
+    padding-top: 30px;
+    text-align: center;
+  }
+
+  .social-networks a {
+    color: #f9f9f9;
+    font-size: 32px;
+    padding: 10px;
+    transition: 0.2s;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .facebook:hover {
+    color: #0077e2;
+  }
+
+  .google:hover {
+    color: #ef1a1a;
+  }
+
+  .twitter:hover {
+    color: #00aced;
+  }
+
+  .btn {
+    background-color: #d84b6b;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    display: block;
+    line-height: 25px;
+    margin-top: 10px;
+    margin: 0 auto;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #myFooter {
+      text-align: center;
+  }
+}
+
+@media all and (max-width: 1190px) {
+  div.benefitDetail{
+    padding-top: 50px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  div.benefitDetail{
+    padding-top: 210px;
+  }
+}

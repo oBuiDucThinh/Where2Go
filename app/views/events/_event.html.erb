@@ -1,0 +1,22 @@
+<div class = "row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <div class="detailThumbnail right">
+      <div class="detailImg">
+        <img src="/assets/event3.jpg" height="100%" >
+        <div class="time">
+          <p><%= event.date_start %></p>
+          <p><%= event.date_end %></p>
+        </div>
+      </div>
+      <div class="detailDes">
+        <p class="title"><%= link_to event.title, event %></p>
+        <p class="address"><%= event.content %></p>
+        <p class="create">By <span><%= event.user.name %></span><span class="category"></span></p>
+        <div class = "button-event clearfix pull-right">
+          <%= link_to t(".interest"), "#", class: "btn btn-primary btn-event" %>
+          <%= link_to t(".join"), "#", class: "btn btn-primary btn-event" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
