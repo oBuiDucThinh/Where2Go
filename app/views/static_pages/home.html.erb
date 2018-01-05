@@ -1,1 +1,17 @@
-<h1><%= t :website%></h1>
+<% provide :title, t(".title") %>
+<%= render "layouts/carousel" %>
+<div class = "main-content">
+  <div class = "content content1">
+    <div class = "description">
+      <p><%= t ".title1" %></p>
+      <p><%= t ".trend" %></p>
+    </div>
+    <%= render partial: "events/event", collection: @events %>
+  </div>
+
+    <div class = "see-more">
+      <%= link_to t(".see"), "#", class: "btn btn-primary btn-see" %>
+    </div>
+  </div>
+  <%= render "layouts/benefit" %>
+</div>
