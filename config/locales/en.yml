@@ -8,10 +8,73 @@ en:
   error: "error"
   acc_activate: Please check your email to activate your account"
   website: "Where2Go"
+  web: "Where2Go"
+  description: "The coolest website for promoting, checking, and joining events in Vietnam"
 
   layouts:
     application:
       tit: "Where2Go"
+
+    header:
+      tit: "Where2Go"
+      events: "All Events"
+      contact: "Contact"
+      log_in: "Log in"
+      log_out: "Log out"
+      sign_up: "Sign up"
+      account: "Account"
+      profile: "Profile"
+      setting: "Settings"
+
+    benefit:
+      title1: "BENEFIT"
+      title2: "WHEN JOIN US"
+      rank1: "#1"
+      rank2: "#2"
+      rank3: "#3"
+      bDescript1: "MONEY-SAVING"
+      bDescript2: "EASY TO USE"
+      bDescript3: "FREE"
+      bDescript: "When choose to become a part of W2G community, you can easily promote your events, or simply
+        keep up to date with the hottest events in town"
+
+    carousel:
+      heading1: "BECOME THE TRENDSETTER"
+      description: "Don't know what to do on your weekend? Join Where2Go!"
+      signup: "Sign up for free"
+
+    footer:
+      start: "Get started"
+      home: "Home"
+      signup: "Sign up"
+      about: "About us"
+      info: "Information"
+      review: "Review"
+      support: "Support"
+      faq: "FAQ"
+      contact: "Contact us"
+      copyright: "© 2017 WHERE2GO"
+
+  static_pages:
+    home:
+      title: "Home"
+      title1: "BEST EVENT"
+      trend: "ON TRENDING"
+      see: "See more..."
+
+    contact:
+      title: "Contact"
+      header: "About Us"
+      intro: "We are some RoR enthusiasts trying to make a cool webpage"
+      description: "But seems like we are getting nowhere with this project. Where2Go coming soon"
+      team: "Our team members"
+      mem1: "Quynh Anh"
+      mem2: "Duc Thinh"
+      mem3: "Xuan Hoa"
+      pos: "coder"
+      task1: "code"
+      task2: "code"
+      task3: "code"
 
   users:
     new:
@@ -19,3 +82,22 @@ en:
       sign_up: "Sign up"
       role: "Role"
       category: "Category"
+
+  events:
+    event:
+      dstart: "Date starts: "
+      dend: "Date ends: "
+      open: "Open: "
+      creator: "Creator: "
+      interest: "Interested"
+      join: "Join"
+
+  sessions:
+    new:
+      tit: "Login"
+      email_label: "Email"
+      pass_label: "Password"
+      remember: "Remember me"
+      login: "Log in"
+      new? : "New user? "
+      sign_up: "Sign up now!"
