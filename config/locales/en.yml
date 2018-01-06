@@ -268,7 +268,6 @@ en:
         page_name: "Edit role"
         save_changes: "Save changes"
         heading: "Edit role for user: "
-
       index:
         page_name: "Manage Users"
         heading: "All users"

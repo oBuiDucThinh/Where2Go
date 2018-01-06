@@ -18,7 +18,7 @@ class EventsController < ApplicationController
 
   def search
     index
-    render :index
+    render :search
   end
 
 
