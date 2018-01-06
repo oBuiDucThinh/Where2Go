@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  join: false
+  like: false
+  user: one
+  event: one
+
+two:
+  join: false
+  like: false
+  user: two
+  event: two

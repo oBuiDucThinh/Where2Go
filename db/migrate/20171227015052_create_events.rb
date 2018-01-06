@@ -5,7 +5,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.text :content
       t.datetime :date_start
       t.datetime :date_end
-      t.boolean :is_open
+      t.boolean :is_open, default: true
       t.references :user, foreign_key: true
 
       t.timestamps

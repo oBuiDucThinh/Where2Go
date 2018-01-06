@@ -1,14 +1,14 @@
 <footer id="myFooter">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-3 footer-img">
         <%= link_to image_tag("logo.png"), root_path %>
       </div>
       <div class="col-sm-2">
         <h5><%= t ".start" %></h5>
         <ul>
           <li><%= link_to t(".home"), root_path %></li>
-          <li><%= link_to t(".signup"), signup_path %></li>
+          <li><%= link_to t(".signup"), new_user_path %></li>
         </ul>
       </div>
       <div class="col-sm-2">

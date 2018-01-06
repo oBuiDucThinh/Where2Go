@@ -1,4 +1,4 @@
-ActiveRecord::Schema.define(version: 20180102014057) do
+ActiveRecord::Schema.define(version: 20180105034313) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -44,12 +44,13 @@ ActiveRecord::Schema.define(version: 20180102014057) do
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.datetime "date_start"
-    t.datetime "date_end"
-    t.boolean "is_open"
+    t.date "date_start"
+    t.date "date_end"
+    t.boolean "is_open", default: true
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "picture"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -64,8 +65,8 @@ ActiveRecord::Schema.define(version: 20180102014057) do
   end
 
   create_table "user_events", force: :cascade do |t|
-    t.boolean "join"
-    t.boolean "like"
+    t.boolean "join", default: false
+    t.boolean "like", default: false
     t.integer "user_id"
     t.integer "event_id"
     t.datetime "created_at", null: false
