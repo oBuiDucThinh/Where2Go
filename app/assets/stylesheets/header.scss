@@ -77,6 +77,10 @@ div.navbar-header {
       a {
         color: white;
 
+        &:visited {
+          color: white;
+        }
+
         &:hover {
           color: black;
           transition: all 0.5s;
