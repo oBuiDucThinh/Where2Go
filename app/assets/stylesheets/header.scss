@@ -29,7 +29,7 @@ header a.navbar-brand {
 
 .navbar-nav>li>a {
   line-height: 30px;
-  padding-left: 30px;
+  padding: 15px 30px;
 }
 
 div.navbar-header {
@@ -81,7 +81,7 @@ div.navbar-header {
 }
 
 .navbar-fixed-top .navbar-nav>li>a:hover {
-  color: $nav-font-hover;
+  color: black;
   transition: all 0.5s;
 }
 
@@ -107,7 +107,7 @@ button.navbar-toggle{
   height: 1px;
 }
 
-.navbar-toggle .icon-bar+.icon-bar{
+.navbar-toggle .icon-bar.icon-bar{
   margin-top: 6px;
 }
 

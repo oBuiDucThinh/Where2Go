@@ -3,12 +3,53 @@
 
 /* form */
 input, textarea, select, .uneditable-input {
-  border: 1px solid $light-gray;
-  width: 100%;
-  margin-bottom: 15px;
   @include box_sizing;
+  border: 1px solid $light-gray;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 input {
   height: auto !important;
+}
+
+/* Sign-up Form */
+.form-title {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 40px;
+  padding-bottom: 40px;
+}
+
+.signup-form {
+  padding: 40px 0 150px 0;
+}
+
+.form-label {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 17px;
+}
+
+.form-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid grey;
+  margin-bottom: 13px;
+  outline: none;
+}
+
+input[type=checkbox] { display:none; }
+input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+input[type=checkbox] + label:before { content: "\f096"; }
+input[type=checkbox] + label:before { letter-spacing: 10px; }
+
+input[type=checkbox]:checked + label:before { content: "\f046"; }
+input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
+
+/* Login form */
+.login-form {
+  padding: 40px 0 150px 0;
 }

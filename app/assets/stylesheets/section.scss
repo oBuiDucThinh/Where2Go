@@ -4,11 +4,6 @@
   position: relative;
 }
 
-.content1 {
-  background-color:$content1-bg;
-  padding-bottom: 70px;
-}
-
 .content2 {
   background-color:$content2-bg;
   margin:0;
@@ -80,7 +75,7 @@ div.detailThumbnail > div.detailDes {
   font-family: 'Nunito', sans-serif;
   height: 100%;
   overflow: hidden;
-  padding: 25px 0 0 15px;
+  padding: 15px 0 0 15px;
   position: relative;
 }
 
@@ -119,10 +114,9 @@ div.button-event {
 }
 
 p.create {
-  bottom: 0;
+  bottom: 3px;
   font-size: 12px;
   position: absolute;
-  width: 100%;
   span {
     color:$event-creator-font;
   }
@@ -181,9 +175,8 @@ p.benefitDes {
 }
 
 .see-more {
-  background-color: $content1-bg;
   margin: auto;
-  padding: 10px;
+  padding: 25px;
   text-align: center;
 }
 
@@ -206,8 +199,12 @@ p.benefitDes {
     text-align: center;
   }
 
-  .row {
-    margin-bottom: 60px;
+  .footer-img {
+    height: 190px;
+    img {
+      margin-top: -40px;
+      margin-left: -60px;
+    }
   }
 
   .navbar-brand {
@@ -237,7 +234,7 @@ p.benefitDes {
     color: #d2d1d1;
     text-decoration: none;
     &:hover, &:focus {
-      color: white;
+      color: black;
       text-decoration: none;
     }
   }
