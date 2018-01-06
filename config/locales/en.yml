@@ -82,6 +82,7 @@ en:
       sign_up: "Sign up"
       role: "Role"
       category: "Category"
+      register: "Register"
 
   events:
     event:
@@ -91,6 +92,14 @@ en:
       creator: "Creator: "
       interest: "Interested"
       join: "Join"
+      by: "By"
+      home: "Home"
+      help: "Help"
+      acc: "Account"
+      profile: "Profile"
+      setting: "Settings"
+      log_out: "Log out"
+      log_in: "Log in"
 
   sessions:
     new:

@@ -7,6 +7,10 @@ header {
   font-size: 15px;
   height: 60px;
   letter-spacing: 1px;
+
+  a.navbar-brand {
+    padding: 0 0 0 30px;
+  }
 }
 
 button{
@@ -16,82 +20,80 @@ button{
 .navbar {
   border-radius: 0;
   border-style: none;
-  margin:0;
-}
-
-header a.navbar-brand {
-  padding:0 0 0 30px;
+  margin: 0;
 }
 
 .container-fluid {
-  padding:0;
+  padding: 0;
 }
 
-.navbar-nav>li>a {
-  line-height: 30px;
-  padding-left: 30px;
+.navbar-nav {
+  li {
+    a {
+      line-height: 30px;
+      padding: 15px 36px;
+    }
+  }
 }
 
 div.navbar-header {
   height: 60px;
-}
 
-.navbar-brand {
-  height: 100%;
+  img {
+    &:hover {
+      opacity: 0.6;
+      transition: all 0.5s;
+    }
+  }
 }
 
 .navbar-btn {
   background-color: $nav-bg;
-  border-radius: 10px;
-  border-radius: 3px;
-  border:1px solid white;
+  border-radius: 5px;
+  border: 1px solid white;
   box-sizing: border-box;
   color: white;
   letter-spacing: 1px;
-  margin:13px 10px 0 30px;
+  margin: 13px 10px 0 20px;
   outline: 0;
-  padding-bottom: 7px;
-  padding-top:7px;
+
+  &:hover {
+    background-color: $nav-bg-hover;
+    border-color: $nav-border-hover;
+    color: $nav-font-hover;
+    outline: none;
+    transition: all 0.5s;
+  }
 }
 
 .signup {
   background:linear-gradient(to right, $signup-btn1, $signup-btn2);
-  margin-left: 10px;
-  margin-right: 20px;
 }
 
-.navbar-btn:hover {
-  background-color: $nav-bg-hover;
-  border-color: $nav-border-hover;
-  color: $nav-font-hover;
-  outline: none;
-  transition: all 0.5s;
-}
-
-.navbar-toggle {
-  margin-top: 13px;
-}
-
-.navbar-fixed-top .navbar-nav>li>a {
-  color: white;
-}
-
-.navbar-fixed-top .navbar-nav>li>a:visited {
-  color: white;
-}
-
-.navbar-fixed-top .navbar-nav>li>a:hover {
-  color: $nav-font-hover;
-  transition: all 0.5s;
-}
-
-.navbar-fixed-top{
+.navbar-fixed-top {
   background-color:$nav-bg;
-}
+  .navbar-nav {
+    li {
+      a {
+        color: white;
 
-.navbar-brand img:hover{
-  opacity: 0.6;
-  transition: all 0.5s;
+        &:hover {
+          color: black;
+          transition: all 0.5s;
+        }
+      }
+    }
+  }
+  .navbar-toggle {
+    margin-top: 13px;
+
+    .icon-bar {
+      background-color: white;
+      color: white;
+      height: 1px;
+      margin-top: 6px;
+    }
+  }
 }
 
 nav.navbar{
@@ -102,19 +104,27 @@ button.navbar-toggle{
   border-style: none;
 }
 
-.navbar-toggle .icon-bar{
-  color: white;
-  height: 1px;
+.dropdown-menu {
+  background-color: $nav-bg;
+  border: none;
+  padding: 0;
+
+  li.divider {
+    margin: 0;
+  }
 }
 
-.navbar-toggle .icon-bar+.icon-bar{
-  margin-top: 6px;
-}
-
-.navbar-fixed-top .navbar-toggle:focus, .navbar-fixed-top .navbar-toggle:hover{
-  background-color: $nav-toggle-focus;
-}
-
-.navbar-fixed-top .navbar-toggle .icon-bar{
-  background-color: white;
+.dropdown-toggle {
+  &:link {
+    background-color: $nav-bg !important;
+    color: white !important;
+  }
+  &:visited {
+    background-color: $nav-bg !important;
+  }
+  &:hover {
+    background-color: white !important;
+    color: black !important;
+    opacity: 0.9;
+  }
 }

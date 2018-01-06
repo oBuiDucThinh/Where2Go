@@ -23,7 +23,7 @@
           </li>
         <% else %>
           <%= link_to t(".log_in"), login_path, class: "btn btn-default navbar-btn" %>
-          <%= link_to t(".sign_up"), signup_path, class: "btn btn-default navbar-btn signup" %>
+          <%= link_to t(".sign_up"), new_user_path, class: "btn btn-default navbar-btn signup" %>
         <% end %>
       </ul>
     </nav>
