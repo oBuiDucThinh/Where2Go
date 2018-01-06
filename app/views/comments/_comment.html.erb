@@ -1,0 +1,31 @@
+<div class="media markdown" id="comment_<%= comment.id %>">
+  <a class="pull-left" href="#"></a>
+  <% if current_user && current_user.id == comment.user_id %>
+    <span>
+      <%= link_to "X", [comment.event, comment], method: :delete, remote: true,
+        data: {toggle: "modal", target:"#myModal"}, class: "btn btn-primary remove-button" %>
+    </span>
+  <% end %>
+  <div class="media-body">
+    <h4 class="media-heading">
+      <%= comment.user.try(:name) %>
+      <small><%= comment.created_at%></small>
+    </h4>
+    <%= comment.content %>
+  </div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p class="text-center"><%= t ".deleted" %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default remove-button" data-dismiss="modal">
+          <%= t ".close" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
