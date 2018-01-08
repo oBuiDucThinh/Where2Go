@@ -6,12 +6,12 @@
       <p><%= t ".title1" %></p>
       <p><%= t ".trend" %></p>
     </div>
-    <%= render partial: "events/event", collection: @events %>
-  </div>
-
-    <div class = "see-more">
-      <%= link_to t(".see"), "#", class: "btn btn-primary btn-see" %>
+    <div class = "container">
+      <%= render partial: "events/event", collection: @events %>
     </div>
   </div>
-  <%= render "layouts/benefit" %>
+  <div class = "see-more">
+    <%= link_to t(".see"), events_path, class: "W2Gbutton" %>
+  </div>
 </div>
+<%= render "layouts/benefit" %>

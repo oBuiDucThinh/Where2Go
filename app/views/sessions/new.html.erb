@@ -1,22 +1,23 @@
 <h1 class = "text-center"><%= t ".tit" %></h1>
 <div class="row login-form">
-  <div class="col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3">
+  <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4">
+    <h1 class = "form-title">Login</h1>
     <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :email, t(".email_label") %>
-      <%= f.email_field :email, class: "form-control" %>
+      <%= f.label :email, t(".email_label"), class: "form-label" %>
+      <%= f.email_field :email, class: "form-input" %>
 
-      <%= f.label :password, t(".pass_label") %>
-      <%= f.password_field :password, class: "form-control" %>
+      <%= f.label :password, t(".pass_label"), class: "form-label" %>
+      <%= f.password_field :password, class: "form-input" %>
 
-      <%= f.label :remember_me, class: "checkbox inline" do %>
+      <div class = "checkbox form-label">
         <%= f.check_box :remember_me %>
-        <span><%= t ".remember" %></span>
-      <% end %>
+        <%= f.label :remember_me, t(".remember"), class: "checkbox inline form-label" %>
+      </div>
 
-      <%= f.submit t(".login"), class: "btn btn-info" %>
+      <%= f.submit t(".login"), class: "W2Gbutton form-label" %>
     <% end %>
 
-    <p class = "text-center"><%= t ".new?" %><%= link_to t(".sign_up"), "#" %></p>
+    <p class = "text-center form-label"><%= t ".new?" %><%= link_to t(".sign_up"), new_user_path %></p>
   </div>
 </div>

@@ -4,11 +4,6 @@
   position: relative;
 }
 
-.content1 {
-  background-color:$content1-bg;
-  padding-bottom: 70px;
-}
-
 .content2 {
   background-color:$content2-bg;
   margin:0;
@@ -22,18 +17,16 @@
   position: relative;
   text-align: center;
   width: 100%;
-}
-
-.description p:nth-child(1) {
-  color: $w2g-btn1;
-  font-size: 15px;
-  letter-spacing: 10px;
-}
-
-.description p:nth-child(2) {
-  color: black;
-  font-size: 40px;
-  letter-spacing: 2px;
+  p:nth-child(1) {
+    color: $w2g-btn1;
+    font-size: 15px;
+    letter-spacing: 10px;
+  }
+  p:nth-child(2) {
+    color: black;
+    font-size: 40px;
+    letter-spacing: 2px;
+  }
 }
 
 div.detailThumbnail {
@@ -42,64 +35,56 @@ div.detailThumbnail {
   height: 110px;
   margin:10px 0 0 0;
   position: relative;
-}
-
-div.detailThumbnail div.detailImg {
-  display: inline-block;
-  position: relative;
-  width: 110px;
-}
-
-div.detailImg div.time {
-  background-color: $event-time-bg;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  height: 100%;
-  left: 0;
-  opacity: 0.9;
-  position: absolute;
-  text-align: center;
-  top:0;
-  width: 100%;
-}
-
-div.time p:nth-child(1) {
-  font-size: 40px;
-  letter-spacing: 2px;
-  margin:0;
-  padding-top: 15px;
-}
-
-div.time p:nth-child(2) {
-  font-size: 20px;
-  letter-spacing: 7px;
-}
-
-div.detailThumbnail > div.detailDes {
-  display: inline-block;
-  font-family: 'Nunito', sans-serif;
-  height: 100%;
-  overflow: hidden;
-  padding: 25px 0 0 15px;
-  position: relative;
-}
-
-div.detailDes p {
-  display: block;
-  margin: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  div.detailImg {
+    display: inline-block;
+    position: relative;
+    width: 110px;
+    div.time {
+      background-color: $event-time-bg;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      height: 100%;
+      left: 0;
+      opacity: 0.9;
+      position: absolute;
+      text-align: center;
+      top:0;
+      width: 100%;
+      p:nth-child(1) {
+        font-size: 40px;
+        letter-spacing: 2px;
+        margin:0;
+        padding-top: 15px;
+      }
+      p:nth-child(2) {
+        font-size: 20px;
+        letter-spacing: 7px;
+      }
+    }
+  }
+  div.detailDes {
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+    height: 100%;
+    overflow: hidden;
+    padding: 15px 0 0 15px;
+    position: relative;
+    p {
+      display: block;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .right {
+    margin: 0 0 10px 0;
+  }
 }
 
 p.title{
   font-size: 15px;
   font-weight: 900;
-}
-
-div.detailThumbnail.right {
-  margin-bottom: 10px;
-  margin-top: 0;
 }
 
 div.button-event {
@@ -119,10 +104,9 @@ div.button-event {
 }
 
 p.create {
-  bottom: 0;
+  bottom: 3px;
   font-size: 12px;
   position: absolute;
-  width: 100%;
   span {
     color:$event-creator-font;
   }
@@ -181,9 +165,8 @@ p.benefitDes {
 }
 
 .see-more {
-  background-color: $content1-bg;
   margin: auto;
-  padding: 10px;
+  padding: 25px;
   text-align: center;
 }
 
@@ -198,7 +181,10 @@ p.benefitDes {
 #myFooter {
   background-color: #3c3d41;
   color: white;
+  position: relative;
   padding-top: 30px;
+  padding-left: 90px;
+  width: 100%;
   .footer-copyright {
     background-color: #333333;
     padding-bottom: 3px;
@@ -206,8 +192,12 @@ p.benefitDes {
     text-align: center;
   }
 
-  .row {
-    margin-bottom: 60px;
+  .footer-img {
+    height: 190px;
+    img {
+      margin-top: -40px;
+      margin-left: -60px;
+    }
   }
 
   .navbar-brand {
@@ -237,7 +227,7 @@ p.benefitDes {
     color: #d2d1d1;
     text-decoration: none;
     &:hover, &:focus {
-      color: white;
+      color: black;
       text-decoration: none;
     }
   }

@@ -10,6 +10,7 @@ en:
   website: "Where2Go"
   web: "Where2Go"
   description: "The coolest website for promoting, checking, and joining events in Vietnam"
+  success: "Successful"
 
   layouts:
     application:
@@ -25,6 +26,7 @@ en:
       account: "Account"
       profile: "Profile"
       setting: "Settings"
+      create: "Create events"
 
     benefit:
       title1: "BENEFIT"
@@ -64,9 +66,15 @@ en:
 
     contact:
       title: "Contact"
-      header: "About Us"
-      intro: "We are some RoR enthusiasts trying to make a cool webpage"
-      description: "But seems like we are getting nowhere with this project. Where2Go coming soon"
+      header1: "About Us"
+      intro1: "We are some RoR enthusiasts trying to make a cool webpage"
+      description1: "But seems like we are getting nowhere with this project.
+        Where2Go coming soon"
+      header2: "Where2Go community"
+      intro2: "What is W2GO?"
+      description2: "Where2Go is a community built to help independent promoters and event organizers
+        promote their events to target customers.To date, tens of thousands events have been promoted and checked in
+        with the support of Where2Go"
       team: "Our team members"
       mem1: "Quynh Anh"
       mem2: "Duc Thinh"
@@ -82,6 +90,13 @@ en:
       sign_up: "Sign up"
       role: "Role"
       category: "Category"
+      register: "Register"
+
+    show:
+      join: "Joined events"
+      subcribe: "Subcribed events"
+      create: "Created events"
+      by: "By"
 
   events:
     event:
@@ -91,6 +106,33 @@ en:
       creator: "Creator: "
       interest: "Interested"
       join: "Join"
+      by: "By"
+      home: "Home"
+      help: "Help"
+      acc: "Account"
+      profile: "Profile"
+      setting: "Settings"
+      log_out: "Log out"
+      log_in: "Log in"
+
+    new:
+      heading: "Create your new event"
+      name: "Event's name cannot be longer than 150 characters"
+      location: "Location"
+      choose_locatin: "Choose a city"
+      category: "Category"
+      start: "Day start"
+      end: "Day end"
+      description: "Detail description"
+
+    show:
+      search: "Search"
+      categories: "Categories"
+      leave_comment: "Leave a comment"
+      post: " Posted on "
+      start: "START AT "
+      end: "END AT "
+      comment: "Create a comment"
 
   sessions:
     new:

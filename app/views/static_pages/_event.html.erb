@@ -1,0 +1,15 @@
+<div class="row text-center">
+  <div class="col-md-3 col-sm-6 hero-feature">
+    <div class="thumbnail">
+      <img src="http://placehold.it/800x500" alt="">
+      <div class="caption">
+        <h3><%= link_to event.title, event %></h3>
+        <p><%= event.content %></p>
+        <p>By <span style="color:#1ea6b8"><%= event.user.name %></span><span class="category"></span></p>
+        <p>
+          <%= link_to t(".interest"), "#", class: "btn btn-primary btn-event", remote:true %>
+          <%= link_to t(".join"), "#", class: "btn btn-primary btn-event" %>
+        </p>
+      </div>
+    </div>
+</div>
