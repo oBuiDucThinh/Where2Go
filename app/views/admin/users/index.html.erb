@@ -1,0 +1,8 @@
+<% provide :title, t(".page_name") %>
+<div class="users-index">
+  <h1><%= t".heading"%></h1>
+  <ul class="users">
+    <%= render partial: "user", collection: @users %>
+    <%= paginate @users %>
+  </ul>
+</div>

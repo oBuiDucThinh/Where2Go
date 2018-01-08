@@ -13,4 +13,13 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :users
+
+  concern :paginatable do
+    get "(page/:page)", action: :index, on: :collection, as: ""
+  end
+  
+  namespace :admin do
+    resources :users, concerns: :paginatable
+  end
+
 end

@@ -6,7 +6,7 @@ en:
   password_confirmation: "Password confirmation"
   form_contains: "The form contains "
   error: "error"
-  acc_activate: Please check your email to activate your account"
+  acc_activate: "Please check your email to activate your account"
   website: "Where2Go"
   web: "Where2Go"
   description: "The coolest website for promoting, checking, and joining events in Vietnam"
@@ -17,6 +17,9 @@ en:
   layouts:
     application:
       tit: "Where2Go"
+    admin:
+      application:
+        tit: "Where2Go"
 
     header:
       tit: "Where2Go"
@@ -32,6 +35,8 @@ en:
       home: "Home"
       help: "Help"
       users: "Users"
+      manage: "Manage"
+      manage_users: "Users"
 
     benefit:
       title1: "BENEFIT"
@@ -193,3 +198,37 @@ en:
   shared:
     prevent:
       content: "You do not have permission on this page"
+  admin:
+    users:
+      edit:
+        page_name: "Edit role"
+        save_changes: "Save changes"
+        heading: "Edit role for user: "
+        
+      index:
+        page_name: "Manage Users"
+        heading: "All users"
+
+      show:
+        email: "Email: "
+        role: "Role: "
+        joined_date: "Joined: "
+        no_user: "no user"
+        
+      user:
+        user_name: "User name: "
+        id: "ID: "
+        email: "Email: "
+        role: "Role: "
+        joined_date: "Joined: "
+        manage_user: "Manage user: "
+        delete: "[Delete]"
+        edit: "[Edit role]"
+        you_sure: "You sure?"
+
+      update:
+        profile_updated: "Profile updated!"
+      
+      destroy:
+       user_deleted: "User deleted"
+       error: "Error"
