@@ -37,6 +37,7 @@ en:
       users: "Users"
       manage: "Manage"
       manage_users: "Users"
+      manage_events: "Events"
 
     benefit:
       title1: "BENEFIT"
@@ -204,7 +205,7 @@ en:
         page_name: "Edit role"
         save_changes: "Save changes"
         heading: "Edit role for user: "
-        
+
       index:
         page_name: "Manage Users"
         heading: "All users"
@@ -214,7 +215,7 @@ en:
         role: "Role: "
         joined_date: "Joined: "
         no_user: "no user"
-        
+
       user:
         user_name: "User name: "
         id: "ID: "
@@ -228,7 +229,45 @@ en:
 
       update:
         profile_updated: "Profile updated!"
-      
+
       destroy:
        user_deleted: "User deleted"
        error: "Error"
+
+    events:
+      event:
+        creator: "Creator: "
+        post: "Created_at: "
+        info: "More info"
+        delete: "Delete"
+        you_sure: "You sure?"
+        na: "N/A"
+        open: "Open"
+        close: "Close"
+        closed: "Closed"
+        heading: "Change state of event"
+        modal_name: "Edit event"
+        save_changes: "Save changes"
+      show:
+        post: "Created_at: "
+        creator: "Creator: "
+        na: "N/A"
+      index:
+        all_events: "All Events"
+        page_name: "Events"
+        no_event: "Empty"
+        id: "ID"
+        event_title: "Title"
+        creator: "Creator"
+        city: "Cities"
+        created_at: "Created at"
+        date_start: "Date start"
+        date_end: "Date end"
+        state: "State"
+        manage: "Manage"
+        open: "Open"
+        closed: "Closed"
+      edit:
+        heading: "Update state"
+      destroy:
+        event_deleted: "Event deleted"

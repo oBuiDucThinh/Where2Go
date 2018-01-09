@@ -1,0 +1,79 @@
+<tbody>
+  <tr class="odd gradeX">
+    <td><%= event.id %></td>
+    <td><%= link_to event.title, admin_event_path(event) %></td>
+    <td>
+      <% @locations = event.event_cities %>
+      <% @locations.each do |e| %>
+        <li>
+          <%= e.city.city_name%>
+        </li>
+      <% end %>
+    </td>
+    <td>
+      <% @creator = event.user %>
+      <% if @creator.nil? %>
+        <% @creator_name = "N/A" %>
+        <%= @creator_name %>
+      <% else %>
+        <% @creator_name = @creator.name %>
+        <%= link_to @creator_name, admin_user_path(@creator) %>
+      <% end %>
+    </td>
+    <td><%= event.created_at %></td>
+    <td><%= event.date_start %></td>
+    <td><%= event.date_end %></td>
+    <td>
+      <% if event.is_open %>
+        <%= t ".open" %>
+      <% else %>
+        <%= t ".Closed" %>
+      <% end %>
+    </td>
+    <td>
+      <% if event.is_open %>
+        <%= link_to t(".close"), edit_admin_event_path(event), class: "btn btn-info btn"%>
+      <% else %>
+        <%= link_to t(".open"), edit_admin_event_path(event), class: "btn btn-info btn"%>
+      <% end%>
+      <%= link_to t(".delete"), admin_event_path(event), method: :delete,
+        data: {confirm: t(".you_sure")}, class: "btn btn-danger btn" %>
+    </td>
+  </tr>
+</tbody>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">
+         <%= t ".modal_name" %>
+        </h4>
+      </div>
+      <div class="modal-body">
+        <p><%= t ".heading" %></p>
+        <% @event = event %>
+        <%= form_for @event do |f| %>
+          <div class="radio-inline">
+            <%= f.radio_button :is_open, :true %>
+            <%= f.label :is_open, t(".open"), value: "true", class: "radio-value" %>
+          </div>
+          <div class="radio-inline">
+            <%= f.radio_button :is_open, :false %>
+            <%= f.label :is_open, t(".close"), value: "false", class: "radio-value" %>
+          </div>
+          <div>
+              <%= f.submit t(".save_changes") , class: "btn btn-primary btn" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+         <%= t ".close" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

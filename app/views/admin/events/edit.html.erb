@@ -1,0 +1,25 @@
+<div class = "container-fluid event-index">
+  <div class = "row new-event">
+    <div class=" co-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-5 col-md-offset-5 col-sm-offset-3">
+      <h1 class = "form-title"><%= t ".heading" %></h1>
+      <%= form_for @event do |f| %>
+
+        <div class="radio-inline">
+          <%= f.radio_button :is_open, :true %>
+          <%= f.label :is_open, t(".open"), value: "true", class: "radio-value" %>
+        </div>
+
+        <div class="radio-inline">
+          <%= f.radio_button :is_open, :false %>
+          <%= f.label :is_open, t(".close"), value: "false", class: "radio-value" %>
+        </div>
+
+        <div class="form-label">
+          <div>
+            <%= f.submit "Submit", class: "W2Gbutton" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

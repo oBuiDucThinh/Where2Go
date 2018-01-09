@@ -1,7 +1,7 @@
 class Admin::UsersController < Admin::AdminController
   before_action :verify_admin
   before_action :load_user, except: :index
-  
+
   def show
   end
 
@@ -34,7 +34,7 @@ class Admin::UsersController < Admin::AdminController
   end
 
   private
-  
+
   def update_user_params
     params.require(:user).permit :role
   end
