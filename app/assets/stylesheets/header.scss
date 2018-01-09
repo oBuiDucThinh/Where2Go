@@ -27,6 +27,55 @@ button{
   padding: 0;
 }
 
+.search-form {
+  height: 60px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.search-btn {
+  background-color: $nav-bg;
+  border-radius: 0;
+  border: 1px solid white;
+  outline: 0;
+  color: white;;
+}
+
+.search-bar {
+  border-radius: 0;
+}
+
+.ui-autocomplete {
+  position: absolute;
+  z-index: 10000;
+  padding: 0;
+  margin-top: 2px;
+  list-style: none;
+  background-color: white;
+  li {
+    padding: 3px 20px;
+    &:hover {
+      background-color: $alto;
+    }
+  }
+
+  li.ui-state-focus {
+    background-color: $alto;
+  }
+}
+
+.ui-helper-hidden-accessible {
+  display: none;
+}
+
+.input-group {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .navbar-nav {
   li {
     a {

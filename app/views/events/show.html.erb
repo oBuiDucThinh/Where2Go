@@ -4,7 +4,8 @@
     <div class="col-lg-8">
       <h1><%= @event.title %></h1>
       <p class="lead">
-        by <a href="#"><%= @event_owner %></a>
+        by
+        <%= link_to @event_owner, user_path(id: @event_owner_id) %>
       </p>
       <hr>
       <p><span class="glyphicon glyphicon-time"></span><%= t ".post" %><%= @event.created_at %></p>
@@ -48,18 +49,6 @@
 
 
     <div class="col-md-4">
-      <div class="well">
-        <h4><%= t ".search" %></h4>
-        <div class="input-group">
-          <input type="text" class="form-control">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </span>
-        </div>
-      </div>
-
       <div class="well">
         <h4><%= t ".categories" %></h4>
         <div class="row">

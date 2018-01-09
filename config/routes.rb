@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get "/error", to: "static_pages#error"
   resources :events do
     resources :comments
+    collection do
+      match "search" => "events#search", via: [:get, :post], as: :search
+    end
   end
   resources :users
 
