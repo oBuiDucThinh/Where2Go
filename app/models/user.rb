@@ -8,15 +8,17 @@ class User < ApplicationRecord
   has_many :events, through: :comments
   accepts_nested_attributes_for :categories
 
-  enum role: [:normal, :creator]
+  enum role: [:normal, :creator, :admin]
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :name, presence: true, length: {maximum: Settings.user.name.maximum}
   validates :email, presence: true, length: {maximum: Settings.user.email.maximum},
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
   validates :phone, presence: true, length: {maximum: Settings.user.phone.maximum}
-  has_secure_password
   validates :password, presence: true, length: {minimum: Settings.user.password.minimum}
+  has_secure_password
+  
+  scope :load_info_to_edit, ->{select :name, :email, :phone}
 
   def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
