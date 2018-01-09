@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include UsersHelper
   include StaticPagesHelper
   include ApplicationHelper
-  
+
   private
 
   def logged_in_user

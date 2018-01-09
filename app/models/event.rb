@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  attr_accessor :skip_creator_validation
   belongs_to :user, foreign_key: :user_id
   has_many :user_events
   has_many :users, through: :user_events
@@ -12,6 +13,8 @@ class Event < ApplicationRecord
   accepts_nested_attributes_for :cities
   mount_uploader :picture, PictureUploader
   scope :ordered_by_date_created, -> {order created_at: :asc}
+  scope :load_all_events_order_by_date,
+    ->{select :id, :title, :date_start,:date_end and order created_at: :desc}
 
   validates :user_id, presence: true
   validates :title, presence: true

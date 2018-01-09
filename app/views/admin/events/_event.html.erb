@@ -1,0 +1,48 @@
+<tbody>
+  <tr class="odd gradeX">
+    <td><%= event.id %></td>
+    <td><%= link_to event.title, admin_event_path(event) %></td>
+    <td>
+      <% @locations = event.event_cities %>
+      <% @locations.each do |e| %>
+        <li>
+          <%= e.city.city_name%>
+        </li>
+      <% end %>
+    </td>
+    <td>
+      <% @creator = event.user %>
+      <% if @creator %>
+        <% @creator_name = @creator.name %>
+        <%= link_to @creator_name, admin_user_path(@creator) %>
+      <% else %>
+        <%= t ".not_available" %>
+      <% end %>
+    </td>
+    <td><%= event.created_at %></td>
+    <td><%= event.date_start %></td>
+    <td><%= event.date_end %></td>
+    <td>
+      <% if event.is_open %>
+        <%= t ".open" %>
+      <% else %>
+        <%= t ".closed" %>
+      <% end %>
+    </td>
+    <td>
+
+      <button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#myModal">
+        <i class="fa fa-pencil"></i>
+        <%= t ".edit" %>
+      </button>
+
+      <% if event.is_open %>
+        <%= link_to t(".close"), edit_admin_event_path(event), class: "btn btn-info btn" %>
+      <% else %>
+        <%= link_to t(".open"), edit_admin_event_path(event), class: "btn btn-info btn" %>
+      <% end%>
+      <%= link_to t(".delete"), admin_event_path(event), method: :delete,
+        data: {confirm: t(".you_sure")}, class: "btn btn-danger btn" %>
+    </td>
+  </tr>
+</tbody>
