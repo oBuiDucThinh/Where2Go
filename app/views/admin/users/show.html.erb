@@ -1,0 +1,15 @@
+<% provide :title, @user.name %>
+<div class = "container user-profile">
+  <div class="row">
+    <aside class="col-md-4">
+      <section>
+        <h1>
+          <%= @user.name %>
+        </h1>
+        <p><%= t ".email" %><%= @user.email %></p>
+        <p><%= t ".role" %><%= @user.role %></p>
+        <p><%= t ".joined_date" %> <%= @user.created_at %></p>
+      </section>
+    </aside>
+  </div>
+</div>

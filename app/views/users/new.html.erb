@@ -21,7 +21,7 @@
 
       <div class="field select-box form-label ">
         <%= f.label :role, class: "form-label" %><br>
-        <%= f.select :role, User.roles.keys,{}, {class: "form-input"} %>
+        <%= f.select :role, ["normal", "creator"], {}, {class: "form-input"} %>
       </div>
 
       <%= f.label t(".category"), class: "form-label" %>
