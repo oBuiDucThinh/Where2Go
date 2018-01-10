@@ -61,3 +61,22 @@ input[type=checkbox] {
 .login-form {
   padding: 40px 0 150px 0;
 }
+
+.image-upload {
+  input {
+    display: none !important;
+  }
+
+  .file-input {
+    padding: 4px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: grey;
+      color: white;
+      transition: all 0.5s;
+    }
+  }
+}

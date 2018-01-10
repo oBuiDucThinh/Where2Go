@@ -94,8 +94,7 @@ div.button-event {
 
 .btn-event, .btn-see {
   background-color: $nav-bg;
-  border-radius: 10px;
-  border-radius: 3px;
+  border-radius: 6px;
   border:1px solid white;
   box-sizing: border-box;
   color: white;
@@ -179,24 +178,21 @@ p.benefitDes {
 }
 
 #myFooter {
-  background-color: #3c3d41;
+  background-color: $darkslategray;
   color: white;
   position: relative;
   padding-top: 30px;
-  padding-left: 90px;
   width: 100%;
   .footer-copyright {
-    background-color: #333333;
-    padding-bottom: 3px;
-    padding-top: 3px;
+    background-color: $dark;
+    padding: 3px 0;
     text-align: center;
   }
 
   .footer-img {
     height: 190px;
     img {
-      margin-top: -40px;
-      margin-left: -60px;
+      margin: -40px 0 0 30px;
     }
   }
 
@@ -206,7 +202,7 @@ p.benefitDes {
   }
 
   .footer-copyright p {
-    color: #ccc;
+    color: white;
     margin: 10px;
   }
 
@@ -224,7 +220,7 @@ p.benefitDes {
   }
 
   a {
-    color: #d2d1d1;
+    color: white;
     text-decoration: none;
     &:hover, &:focus {
       color: black;
@@ -233,13 +229,12 @@ p.benefitDes {
   }
 
   .social-networks {
-    padding-bottom: 16px;
-    padding-top: 30px;
+    padding: 30px 0 16px 0;
     text-align: center;
   }
 
   .social-networks a {
-    color: #f9f9f9;
+    color: white;
     font-size: 32px;
     padding: 10px;
     transition: 0.2s;
@@ -249,25 +244,24 @@ p.benefitDes {
   }
 
   .facebook:hover {
-    color: #0077e2;
+    color: $facebook;
   }
 
   .google:hover {
-    color: #ef1a1a;
+    color: $tomato;
   }
 
   .twitter:hover {
-    color: #00aced;
+    color: $twitter;
   }
 
   .btn {
-    background-color: #d84b6b;
+    background-color: $indian-red;
     border-radius: 20px;
     border: none;
     color: white;
     display: block;
     line-height: 25px;
-    margin-top: 10px;
     margin: 0 auto;
     width: 150px;
   }

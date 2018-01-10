@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by id: params[:id]
+    @user = current_user
     @events_join = @user.user_events.where(join:true)
     @events_like = @user.user_events.where(like:true)
     @events_created = @user.events
