@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: railsgirlshanoi
+  api_key: '794216198199817'
+  api_secret: lzdmYZzcMrxNAsIsHx0i0rzZJPk
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: railsgirlshanoi
+  api_key: '794216198199817'
+  api_secret: lzdmYZzcMrxNAsIsHx0i0rzZJPk
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: railsgirlshanoi
+  api_key: '794216198199817'
+  api_secret: lzdmYZzcMrxNAsIsHx0i0rzZJPk
+  enhance_image_tag: true
+  static_image_support: false

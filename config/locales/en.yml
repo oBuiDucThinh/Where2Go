@@ -117,6 +117,8 @@ en:
       page_name: "Edit profile"
       heading: "Update your profile"
       save_changes: "Save changes"
+      image: "Choose a picture for your profile"
+      upload: "Upload picture"
 
     index:
       page_name: "Manage users"
