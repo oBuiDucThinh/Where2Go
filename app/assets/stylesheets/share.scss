@@ -1,4 +1,5 @@
 @import 'font-awesome';
+@import 'variable_color';
 
 .hero-spacer {
   margin-top: 50px;
@@ -42,4 +43,94 @@
 img.event-banner {
   width: 100%;
   overflow: hidden;
+}
+
+.status {
+  background-color:transparent;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  z-index: 1000;
+  .closed {
+    background-color: gray;
+    padding:6px 10px;
+  }
+
+  .open {
+    background-color:red;
+    padding:6px 10px;
+  }
+
+  .soon {
+    background-color: $cornflower-blue;
+    padding: 6px 10px;
+  }
+}
+
+
+.nav-tabs.all-events {
+  border-bottom: 2px solid $alto;
+  text-align:center;
+  > li {
+    display:inline-block;
+    float:none;
+    font-size: 20px;
+    zoom:1;
+    &.active {
+      > a {
+        border-width: 0;
+        &:focus, &:hover {
+          border-width: 0;
+        }
+      }
+
+      > a {
+        background: transparent;
+        border: none;
+        color: $cornflower-blue !important;
+      }
+
+      > a::after {
+        transform: scale(1);
+      }
+    }
+
+    > a {
+      border: none;
+      color: $dove-gray;
+    }
+
+    > a {
+      &:hover {
+        background: transparent;
+        border: none;
+        color: $cornflower-blue !important;
+      }
+
+      &::after {
+        content: "";
+        background: $cornflower-blue;
+        bottom: -1px;
+        height: 2px;
+        left: 0px;
+        position: absolute;
+        transform: scale(0);
+        transition: all 250ms ease 0s;
+        width: 100%;
+      }
+    }
+
+    &:hover > a::after {
+      transform: scale(1);
+    }
+  }
+}
+
+.tab-nav > li > a::after {
+  background: $blumine none repeat scroll 0% 0%;
+  color: white;
+}
+
+.tab-pane {
+  padding: 15px 0;
 }
