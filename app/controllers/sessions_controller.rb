@@ -1,21 +1,31 @@
-class SessionsController < ApplicationController
+class SessionsController < Devise::SessionsController
   def new
+    get_pre_login_url
+    super
   end
 
   def create
-    user = User.find_by email: params[:session][:email].downcase
-
-    if user && user.authenticate(params[:session][:password])
-      log_in user
-      params[:session][:remember_me] == "Settings.sessions.remember" ? remember(user) : forget(user)
-      redirect_to root_path
-    else
-      render :new
-    end
+    @referer_url = root_path
+    super
   end
 
   def destroy
-    log_out
-    redirect_to root_path
+    @referer_url = root_path
+    super
+  end
+
+  private
+
+  def get_pre_login_url
+    @referer_url = root_path
+  end
+
+  def after_sign_in_path_for resource
+    sign_in_url = url_for(action: :new, controller: "sessions", only_path: false, protocol: "http")
+    if @referer_url == sign_in_url
+      super
+    else
+      @referer_url || root_path
+    end
   end
 end
