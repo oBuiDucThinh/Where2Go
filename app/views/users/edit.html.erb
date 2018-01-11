@@ -21,14 +21,6 @@
         <%= f.label :password_confirmation, class: "form-label"%>
         <%= f.password_field :password_confirmation, class: "form-input"  %>
 
-        <%= f.label :category, class: "form-label" %>
-          <%= f.collection_check_boxes :category_ids, @categories, :id, :name do |t| %>
-          <div class="checkbox form-label">
-            <%= t.check_box %>
-            <%= t.label %>
-          </div>
-        <% end %>
-
         <%= f.submit t(".save_changes"), class: "W2Gbutton" %>
       <% end %>
       <div class="gravatar_edit">
