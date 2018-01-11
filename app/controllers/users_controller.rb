@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, :correct_user, :get_user_by_id,
     only: [:edit, :update]
-  
+
   def new
     @user = User.new
-    @categories = Category.all
-    @user.categories.build
   end
 
   def show
@@ -49,19 +47,11 @@ class UsersController < ApplicationController
 
   private
 
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = :please_login
-      redirect_to login_url
-    end
-  end
-
   def correct_user
     get_user_by_id
     redirect_to root_url unless current_user? @user
   end
-  
+
   def user_params
     params.require(:user).permit :name, :email, :phone, :role, :password,
       :password_confirmation, category_ids:[]

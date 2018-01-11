@@ -16,8 +16,8 @@
         </div>
       </div>
     </div>
-    <% unless logged_in? %>
-      <%= link_to t(".signup"), signup_path, class: "button W2Gbutton" %>
+    <% unless user_signed_in? %>
+      <%= link_to t(".signup"), new_user_registration_path, class: "button W2Gbutton" %>
     <% end %>
   </div>
 </section>
