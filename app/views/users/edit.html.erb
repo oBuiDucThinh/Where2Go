@@ -21,13 +21,6 @@
         <%= f.label :password_confirmation, class: "form-label"%>
         <%= f.password_field :password_confirmation, class: "form-input"  %>
 
-        <%= f.label :category, class: "form-label" %>
-          <%= f.collection_check_boxes :category_ids, @categories, :id, :name do |t| %>
-          <div class="checkbox form-label">
-            <%= t.check_box %>
-            <%= t.label %>
-          </div>
-        <% end %>
         <div class="form-label image-upload">
           <%= f.label :picture, t(".upload"), class: "control-label file-input" %>
           <%= f.file_field :picture %>

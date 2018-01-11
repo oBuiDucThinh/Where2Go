@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: :show
-  before_action :logged_in_user, only: [:create, :new]
   before_action :find_event, only: [:show, :edit, :update]
   before_filter :require_permission, only: :edit
 

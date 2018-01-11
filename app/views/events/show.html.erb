@@ -38,9 +38,11 @@
       </div>
       <hr>
 
-      <div class="comment-form well">
-        <%= render "comments/form" %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="comment-form well">
+          <%= render "comments/form" %>
+        </div>
+      <% end %>
       <hr>
       <div class="showing-comments">
         <%= render @event.comments %>

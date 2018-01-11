@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy, :show]
   before_action :set_event
   before_action :correct_user, only: :destroy
+  before_action :authenticate_user!, except: :show
 
   def index
     @comments = Comment.order_by_date_created

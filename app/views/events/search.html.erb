@@ -1,0 +1,10 @@
+<div class="container event-index">
+  <h3>Search result</h3>
+  <div class = "row">
+    <ul>
+      <% @events.each do |event| %>
+        <%= render event %>
+      <% end %>
+    </ul>
+  </div>
+</div>

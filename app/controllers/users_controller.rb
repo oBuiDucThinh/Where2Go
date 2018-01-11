@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, :correct_user, :get_user_by_id,
+  before_action :correct_user, :get_user_by_id,
     only: [:edit, :update]
 
   def new
@@ -8,8 +8,6 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @events_join = @user.user_events.where(join:true)
-    @events_like = @user.user_events.where(like:true)
     @events_created = @user.events
     return if @user
     flash[:danger] = t :user_nil
@@ -18,7 +16,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
-    @categories = Category.all
     if @user.save
       flash[:info] = t :acc_activate
       redirect_to root_url
@@ -29,14 +26,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @categories = Category.user_edit_subscribe
-    @user.categories.build
   end
 
   def update
-    @categories = Category.user_edit_subscribe
-    @user.categories.build
-
     if @user.update_attributes edit_user_params
       flash[:success] = t ".profile_updated"
       redirect_to @user
@@ -54,12 +46,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit :name, :email, :phone, :role, :password,
-      :password_confirmation, category_ids:[]
+      :password_confirmation
   end
 
   def edit_user_params
     params.require(:user).permit :name, :email, :phone, :password,
-      :password_confirmation, category_ids:[]
+      :password_confirmation
   end
 
   def get_user_by_id

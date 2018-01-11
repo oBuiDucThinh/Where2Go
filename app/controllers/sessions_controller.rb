@@ -1,26 +1,25 @@
 class SessionsController < Devise::SessionsController
+  before_action :set_root_path
+
   def new
-    get_pre_login_url
     super
   end
 
   def create
-    @referer_url = root_path
     super
   end
 
   def destroy
-    @referer_url = root_path
     super
   end
 
   private
 
-  def get_pre_login_url
+  def set_root_path
     @referer_url = root_path
   end
 
-  def after_sign_in_path_for resource
+  def load_after_sign_in_path_for resource
     sign_in_url = url_for(action: :new, controller: "sessions", only_path: false, protocol: "http")
     if @referer_url == sign_in_url
       super
