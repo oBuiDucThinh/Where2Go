@@ -1,7 +1,23 @@
+$icon-size: 30px;
+
 .event-index {
   margin-top: 80px;
   font-family: 'Montserrat Alternates', sans-serif;
 }
 .new-event {
   padding: 20px 0 150px 0;
+}
+
+.share-event {
+  h3 {
+    font-weight: bold;
+  }
+
+  .social-share-button {
+    .ssb-icon {
+      background-size: $icon-size $icon-size !important;
+      height: $icon-size !important;
+      width: $icon-size !important;
+    }
+  }
 }

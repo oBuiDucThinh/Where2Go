@@ -31,6 +31,7 @@ gem "devise"
 gem "cloudinary"
 gem "chartkick"
 gem "groupdate"
+gem "social-share-button"
 
 group :development, :test do
   gem "sqlite3"

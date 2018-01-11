@@ -5,3 +5,4 @@
 //= require_tree .
 //= require simplemde.min
 //= require chartkick
+//= require social-share-button

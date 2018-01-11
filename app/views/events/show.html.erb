@@ -28,6 +28,13 @@
         <p><span class="label label-warning"><%= t ".end" %></span><b> <%= @event.date_end %></b></p>
         <p class="markdown"><%= markdown @event.content %></p>
       </div>
+      <div class="share-event">
+        <hr>
+        <h3>Share this event!</h3>
+        <%= social_share_button_tag @event.title,
+          image: @event.picture.url,
+          allow_sites: %w(twitter facebook reddit pinterest linkedin) %>
+      </div>
       <hr>
 
       <div class="comment-form well">
