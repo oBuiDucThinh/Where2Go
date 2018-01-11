@@ -2,16 +2,37 @@
   <%= render "events/slide" %>
   <hr>
   <div class="row">
-    <div class="col-lg-12">
-      <h3>Latest Events</h3>
+    <div class="col-lg-12 events-tab">
+      <ul class = "nav nav-tabs all-events">
+        <li class = "active"><a data-toggle = "tab" href = "#happening"><%= t ".happen" %></a></li>
+        <li><a data-toggle = "tab" href = "#coming"><%= t ".soon" %></a></li>
+        <li><a data-toggle = "tab" href = "#close"><%= t ".close" %></a></li>
+      </ul>
+
+      <div class = "tab-content clearfix">
+        <div id = "happening" class = "tab-pane fade in active">
+          <ul>
+            <% @events_open.each do |event| %>
+              <%= render event %>
+            <% end %>
+          </ul>
+        </div>
+
+        <div id = "close" class = "tab-pane fade">
+          <ul>
+            <% @events_close.each do |event| %>
+              <%= render event %>
+            <% end %>
+          </ul>
+        </div>
+        <div id = "coming" class = "tab-pane fade">
+          <ul>
+            <% @events_coming.each do |event| %>
+              <%= render event %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-  <hr>
-  <div class = "row">
-    <ul>
-      <% @events.each do |event| %>
-        <%= render event %>
-      <% end %>
-    </ul>
   </div>
 </div>

@@ -1,6 +1,15 @@
 <div class="col-md-3 col-lg-3 col-sm-6 hero-feature">
   <div class="thumbnail">
     <div class="row">
+      <div class="status">
+        <% if event.is_open && event.date_start > Date.today %>
+          <span class="soon"><%= t ".soon" %></span>
+        <% elsif event.is_open %>
+          <span class="open"><%= t ".happening"%></span>
+        <% else %>
+          <span class="closed"><%= t ".closed" %></span>
+        <% end %>
+      </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
         <%= image_tag event.picture_url(:standard), class: "event-banner" %>
       </div>

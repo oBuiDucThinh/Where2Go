@@ -10,6 +10,13 @@
       <p><span class="glyphicon glyphicon-time"></span><%= t ".post" %><%= @event.created_at %></p>
       <hr>
       <div class = "row">
+        <div class="status">
+          <% if @event.is_open %>
+            <span class="open"><%= t ".happening" %></span>
+          <% else %>
+            <span class="closed"><%= t ".closed" %></span>
+          <% end %>
+        </div>
         <div class = "col-lg-12 col-md-12 col-sm-12">
           <%= image_tag @event.picture.url(:standard), class: "event-banner" if @event.picture? %>
         </div>
