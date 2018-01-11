@@ -14,7 +14,7 @@ sessions:
 static_pages:
   limitation:
     maximum: 10
-    
+
 users_helper:
   size: 80
 
@@ -22,7 +22,7 @@ users:
   index:
     avatar:
       size: 50
-      
+
 show_limit:
   show_1: 1
   show_5: 5

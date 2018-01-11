@@ -1,0 +1,151 @@
+<div class="page-wrapper">
+  <div class="container-fluid statistic-overview" id="back-to-top">
+    <h2 class="text-center statistic-header">Overview</h2>
+    <div class="row overview-card">
+      <div class="col-md-6">
+        <div class="card bg-cyan">
+          <a href="#user-by-day">
+            <div class="card-body">
+              <div class="card-block">
+                <div class="media">
+                  <div class="row">
+                    <div class="col-md-10">
+                      <div class="media-body statistic-content">
+                        <h2><%= @total_users.size %></h2>
+                        <h4>Total users</h4>
+                        <span><%= @new_users.size%> new users this month</span>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="media-right icon">
+                        <i class="fa fa-users cyan" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card bg-cyan">
+          <a href="#event-by-day">
+            <div class="card-body">
+              <div class="card-block">
+                <div class="media">
+                  <div class="row">
+                    <div class="col-md-10">
+                      <div class="media-body statistic-content">
+                        <h2><%= @total_events.size %></h2>
+                        <h4>Total events</h4>
+                        <span><%= @total_events.size %> events have been created on our site</span>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="media-right icon">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card bg-cyan">
+          <a href="#comment-by-day">
+            <div class="card-body">
+              <div class="card-block">
+                <div class="media">
+                  <div class="row">
+                    <div class="col-md-10">
+                      <div class="media-body statistic-content">
+                        <h2><%= @total_comments.size%></h2>
+                        <h4>Comments</h4>
+                        <span>about our events</span>
+                      </div>
+                    </div>
+                    <div class="col-md-2 icon-col">
+                      <div class="media-right icon">
+                        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card bg-cyan">
+          <a href="#creator-profile">
+            <div class="card-body">
+              <div class="card-block">
+                <div class="media">
+                  <div class="row">
+                    <div class="col-md-10">
+                      <div class="media-body statistic-content">
+                        <h2><%= @user.name%></h2>
+                        <h4>Created most events</h4>
+                        <span>This member has created <%= @user.events.count%> events</span>
+                      </div>
+                    </div>
+                    <div class="col-md-2 icon-col">
+                      <div class="media-right icon">
+                        <i class="fa fa-user-o" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <hr>
+    <h3 class="text-center chart-header" id="user-by-day">Registration Flow</h3>
+    <p class="text-center">This chart shows the number of newcomers on our rollercoaster</p>
+      <%= users_by_day %>
+    <h3 class="text-center chart-header" id="event-by-day">Users by role </h3>
+    <p class="text-center">This chart shows the number of users on our site</p>
+      <%= users_by_role %>
+    <h3 class="text-center chart-header">Events created by day </h3>
+    <p class="text-center">This chart shows the number of events has been created on our site by day</p>
+      <%= events_by_day %>
+    <h3 id="comment-by-day" class="text-center chart-header">Comments</h3>
+      <%= comments_by_day %>
+    <div class="most-contributor">
+      <h3 class="text-center chart-header" id="creator-profile">
+        Most events on our page have been created by
+      </h3>
+
+      <div class="profile-card">
+        <% if @user.picture.present? %>
+          <%= image_tag @user.picture_url(:circle), class: "info-center" %>
+        <% else %>
+          <img class="avatar-placeholder" src="http://www.planystech.com/wp-content/uploads/2017/03/profile-placeholder.jpg">
+        <% end %>
+        <div class="contributor-info">
+          <h1 class="text-center"><%= @user.name %></h1>
+          <small>This user has been with us since</small>
+          <h3><%= @user.created_at.to_date %></h3>
+          <p>This member has created totally: <%= @user.events.count %> events </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="to-top-btn">
+    <a href="#back-to-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+  </div>
+</div>

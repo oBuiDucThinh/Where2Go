@@ -10,8 +10,9 @@
         <div class="alert show-alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
       <%= render "layouts/header" %>
+      <%= render "layouts/sidebar" %>
       <%= yield %>
-      <%= render "layouts/footer" %>
+      <%= render "layouts/footer"%>
     </div>
   </body>
 </html>

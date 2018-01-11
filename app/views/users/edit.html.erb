@@ -28,13 +28,16 @@
             <%= t.label %>
           </div>
         <% end %>
-
+        <div class="form-label image-upload">
+          <%= f.label :picture, t(".upload"), class: "control-label file-input" %>
+          <%= f.file_field :picture %>
+          <span class="help-block" id="hint_date1">
+            <%= t ".image" %>
+          </span>
+        </div>
         <%= f.submit t(".save_changes"), class: "W2Gbutton" %>
       <% end %>
-      <div class="gravatar_edit">
-        <%= gravatar_for @user %>
-        <a href="http://gravatar.com/emails" target="_blank"><%= t".change" %></a>
-      </div>
+
     </div>
   </div>
 </div>
