@@ -25,7 +25,7 @@
             <ul class = "dropdown-menu">
               <li><%= link_to t(".profile"), current_user %></li>
               <li><%= link_to t(".setting"), edit_user_path(current_user) %></li>
-              <% if is_creator? %>
+              <% if is_creator? || admin_user? %>
                 <li><%= link_to t(".create"), new_event_path %></li>
               <% end %>
               <li class = "divider"></li>

@@ -171,6 +171,7 @@ en:
       start: "START AT "
       end: "END AT "
       comment: "Create a comment"
+      na: "N/A"
 
     edit:
       heading: "Edit your event"
