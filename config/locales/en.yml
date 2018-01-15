@@ -17,6 +17,11 @@ en:
   comment_delete: "Comment has been deleted"
 
   layouts:
+    sidebar:
+      dashboard: "Dashboard"
+      manage_users: "Manage Users"
+
+
     application:
       tit: "Where2Go"
     admin:
@@ -260,12 +265,21 @@ en:
       index:
         page_name: "Manage Users"
         heading: "All users"
+        id: "ID"
+        user_name: "User name"
+        email: "Email"
+        role: "Role"
+        created_at: "Created at"
+        updated_at: "Updated at"
+        action: "Action"
+        user_management: "User management"
 
       show:
         email: "Email: "
         role: "Role: "
         joined_date: "Joined: "
         no_user: "no user"
+
       user:
         user_name: "User name: "
         id: "ID: "
@@ -273,9 +287,22 @@ en:
         role: "Role: "
         joined_date: "Joined: "
         manage_user: "Manage user: "
-        delete: "[Delete]"
+        delete: "Delete"
         edit: "[Edit role]"
         you_sure: "You sure?"
+        edit_role: "Edit role"
+        modal_name: "Edit user"
+        heading: "Edit role for user "
+        close: "Close"
+        save_changes: "Save changes"
+
+      edit_form:
+        modal_title: "Edit role for user: "
+        normal: "Normal"
+        creator: "Creator"
+        admin: "Admin"
+        cancel: "Cancel"
+        save_changes: "Save changes"
 
       update:
         profile_updated: "Profile updated!"

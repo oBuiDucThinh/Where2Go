@@ -1,8 +1,23 @@
 <% provide :title, t(".page_name") %>
-<div class="users-index">
-  <h1><%= t".heading"%></h1>
-  <ul class="users">
-    <%= render partial: "user", collection: @users %>
-    <%= paginate @users %>
-  </ul>
+<div class="page-wrapper">
+  <div class="container-fluid inner-panel">
+    <h2><%= t ".user_management" %></h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t ".id" %></th>
+          <th><%= t ".user_name" %></th>
+          <th><%= t ".email" %></th>
+          <th><%= t ".role" %></th>
+          <th><%= t ".created_at" %></th>
+          <th><%= t ".updated_at" %></th>
+          <th><%= t ".action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "user", collection: @users %>
+        <%= paginate @users %>
+      </tbody>
+    </table>
+  </div>
 </div>
