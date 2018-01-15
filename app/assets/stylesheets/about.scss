@@ -1,0 +1,51 @@
+div.about-section {
+  font-family: 'Montserrat Alternates', sans-serif;
+  margin-top: 80px;
+
+  section {
+    padding: 30px 0 70px 0;
+  }
+}
+
+h2.section-title {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 3px;
+  font-size: 40px;
+}
+
+.divider-header {
+	display: block;
+	width: 40px;
+	height: 2px;
+	margin: 0 auto;
+  margin-bottom: 10px;
+  background-color: black;
+}
+
+.divider-short {
+	display: block;
+	width: 60px;
+	height: 5px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+#service {
+  background-color: aliceblue;
+
+  div.wow {
+    background-color: white;
+  }
+}
+
+#contact {
+  background-color: aliceblue;
+}
+
+.text-center {
+  padding-top: 30px;
+}
+
+.contactForm {
+  margin-top: 20px;
+}
