@@ -1,0 +1,6 @@
+if(<%= @temp %>){
+  $('#join_<%= @event %>').addClass('fa-sign-in-press');
+} else {
+  $('#join_<%= @event %>').removeClass('fa-sign-in-press');
+}
+$('#join_count_<%= @event %>').html('<%= @current_event.join_events.count %>');

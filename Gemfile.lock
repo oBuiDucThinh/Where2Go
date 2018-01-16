@@ -43,6 +43,8 @@ GEM
       execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap-datepicker-rails (1.7.1.1)
+      railties (>= 3.0)
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
       rails (>= 3.1)
@@ -99,7 +101,10 @@ GEM
     erubis (2.7.0)
     excon (0.60.0)
     execjs (2.7.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     ffi (1.9.18)
+    filterrific (5.0.1)
     fog-aws (2.0.0)
       fog-core (~> 1.38)
       fog-json (~> 1.0)
@@ -118,6 +123,7 @@ GEM
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
     formatador (0.2.5)
+    geocoder (1.4.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.1)
@@ -261,14 +267,18 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (= 3.1.11)
+  bootstrap-datepicker-rails
   bootstrap-kaminari-views
   bootstrap-sass (= 3.3.7)
   byebug
   carrierwave (~> 1.1.0)
   coffee-rails (~> 4.2)
   config
+  faker (~> 1.7.3)
+  filterrific
   fog-aws (= 2.0.0)
   font-awesome-rails
+  geocoder
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
@@ -293,4 +303,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
