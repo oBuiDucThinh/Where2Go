@@ -162,6 +162,9 @@ en:
       des: "Description"
       upload: "Upload Cover"
       sub: "Submit"
+      address_label: "Detail Address"
+      address_holder: "200, Xa Dan Street, Dong Da, Ha Noi"
+      detail_address: "Note down detail of your event location"
 
     show:
       search: "Search"

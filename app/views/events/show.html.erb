@@ -28,7 +28,9 @@
         <p class="markdown"><%= markdown @event.content %></p>
       </div>
       <hr>
-
+      <div id="map" class="map">
+      </div>
+      <hr>
       <div class="well">
         <h4><%= t ".leave_comment" %></h4>
         <%= form_for([@event, @event.comments.build]) do |f| %>
@@ -57,7 +59,6 @@
       </div>
       <% end %>
     </div>
-
 
     <div class="col-md-4">
       <div class="well">

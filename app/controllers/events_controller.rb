@@ -35,6 +35,12 @@ class EventsController < ApplicationController
     @event_cities = @event.event_cities
     @event_owner = @event.user.name
     @comments = current_user.comments.build if logged_in?
+    if request.xhr?
+      render json: {
+        latitude: @event.latitude,
+        longitude: @event.longitude
+      }
+    end
   end
 
   def new
@@ -68,7 +74,7 @@ class EventsController < ApplicationController
 
   def require_permission
     if logged_in?
-      if current_user.id != Event.find_by(params[:id]).user_id
+      if current_user != Event.find_by(params[:id]).user
         redirect_to error_path
       end
     else
@@ -84,6 +90,6 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :content, :date_start, :date_end,
-      :is_open, :picture, category_ids:[], city_ids:[])
+      :is_open, :address, :picture, category_ids:[], city_ids:[])
   end
 end

@@ -1,4 +1,7 @@
 class Event < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+  belongs_to :user
   has_many :like_events
   has_many :liked_by_users, through: :like_events, class_name: :User
   has_many :join_events
@@ -22,6 +25,7 @@ class Event < ApplicationRecord
   validates :category_ids, presence: true
   validates :city_ids, presence: true
   validates :picture, presence: true
+  validates :address, presence: true
 
   filterrific(
     default_filter_params: {sorted_by: "created_at_asc"},
