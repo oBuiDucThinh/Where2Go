@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :logged_in_user, only: [:create, :new]
-  before_action :find_user, only: [:show, :edit, :update]
+  before_action :find_event, only: [:show, :edit, :update]
   before_filter :require_permission, only: :edit
   def index
     @events = Event.all
@@ -49,8 +49,12 @@ class EventsController < ApplicationController
 
   private
 
-  def find_user
+  def find_event
     @event = Event.find_by id: params[:id]
+    if @event.nil?
+      flash[:danger] = t :error
+      redirect_to root_url
+    end
   end
 
   def event_params
