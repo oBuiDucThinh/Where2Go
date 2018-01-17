@@ -1,15 +1,19 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, except: :show
   before_action :logged_in_user, only: [:create, :new]
   before_action :find_user, only: [:show, :edit, :update]
   before_filter :require_permission, only: :edit
   def index
-    @events = Event.all
+    @events = Event.load_event_info.ordered_by_date_created
+    @events_close = Event.load_event_close.ordered_by_date_created
+    @events_open = Event.load_event_open.ordered_by_date_created
+    @events_coming = Event.load_event_coming.ordered_by_date_created
   end
 
   def show
     @event_categories = @event.event_categories
     @event_owner = @event.user.name
-    @comments = current_user.comments.build if logged_in?
+    @comments = current_user.comments.build if user_signed_in?
   end
 
   def new
