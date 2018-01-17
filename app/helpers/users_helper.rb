@@ -12,5 +12,9 @@ module UsersHelper
   def admin_user?
     current_user.admin?
   end
-  
+
+  def verify_admin
+    redirect_to root_url unless admin_user?
+  end
+
 end

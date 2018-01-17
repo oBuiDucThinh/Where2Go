@@ -12,6 +12,8 @@ class Event < ApplicationRecord
   accepts_nested_attributes_for :cities
   mount_uploader :picture, PictureUploader
   scope :ordered_by_date_created, -> {order created_at: :asc}
+  scope :load_for_admin_index_order_by_date,
+    ->{select :id, :title, :date_start,:date_end and order created_at: :desc}
 
   validates :user_id, presence: true
   validates :title, presence: true
