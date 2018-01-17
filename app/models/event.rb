@@ -44,6 +44,12 @@ class Event < ApplicationRecord
       order("events.created_at #{ direction }")
     when /^date_start_/
       order("events.date_start #{ direction }")
+    when /^most_like_/
+      select("events.*, count(like_events.event_id) as likes_count")
+        .joins(:like_events).group(:event_id).order("likes_count #{ direction }")
+    when /^most_join_/
+      select("events.*, count(join_events.event_id) as joins_count")
+        .joins(:join_events).group(:event_id).order("joins_count #{ direction }")
     else
       raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end
@@ -85,6 +91,20 @@ class Event < ApplicationRecord
       ["Created date (oldest first)", "created_at_asc"],
       ["Start date (newest first)", "date_start_desc"],
       ["Start date (oldest first)", "date_start_asc"],
+      ["Most liked", "most_like_desc"],
+      ["Less liked", "most_like_asc"],
+      ["Most joined", "most_join_desc"],
+      ["Less joined", "most_join_asc"]
     ]
+  end
+
+  def Event.most_like
+    select("events.*, count(like_events.event_id) as likes_count")
+      .joins(:like_events).group(:event_id).order("likes_count DESC").limit(4)
+  end
+
+  def Event.most_join
+    select("events.*, count(join_events.event_id) as joins_count")
+      .joins(:join_events).group(:event_id).order("joins_count DESC").limit(4)
   end
 end

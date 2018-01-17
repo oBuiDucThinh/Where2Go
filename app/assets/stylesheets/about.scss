@@ -1,6 +1,6 @@
 div.about-section {
   font-family: 'Montserrat Alternates', sans-serif;
-  margin-top: 80px;
+  margin-top: 60px;
 
   section {
     padding: 30px 0 70px 0;
@@ -11,6 +11,7 @@ h2.section-title {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 3px;
   font-size: 40px;
+  color: black;
 }
 
 .divider-header {
@@ -31,7 +32,7 @@ h2.section-title {
 }
 
 #service {
-  background-color: aliceblue;
+  background-color: #f7f7f7;
 
   div.wow {
     background-color: white;
@@ -39,7 +40,7 @@ h2.section-title {
 }
 
 #contact {
-  background-color: aliceblue;
+  background-color: #f7f7f7;
 }
 
 .text-center {
@@ -48,4 +49,31 @@ h2.section-title {
 
 .contactForm {
   margin-top: 20px;
+}
+
+div.item {
+  img.img-responsive {
+    padding: 25px;
+    background-color: #f7f7f7;
+  }
+}
+
+div.progress {
+  div.progress-bar {
+    p {
+      padding-top: 5px;
+      height: 100%;
+      margin: 0;
+    }
+  }
+  height: 35px;
+}
+
+p.member-name {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.img-responsive {
+  border-radius: 5px;
 }

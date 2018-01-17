@@ -9,13 +9,12 @@ class JoinEventsController < ApplicationController
 
     if @new_join.save
       @temp = true
-      return @temp
     else
       @current_join = JoinEvent.find_by(user_id: @user, event_id: @event)
       @current_join.destroy
       @temp = false
-      return @temp
     end
+    return @temp
 
     respond_to do |format|
       format.html {redirect_to events_path}
