@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, :correct_user, :get_user_by_id,
     only: [:edit, :update]
-  
+
   def new
     @user = User.new
     @categories = Category.all
@@ -10,9 +10,9 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @events_join = @user.user_events.where(join:true)
-    @events_like = @user.user_events.where(like:true)
-    @events_created = @user.events
+    @like_event = @user.like_events
+    @join_event = @user.join_events
+    @created_event = @user.events
     return if @user
     flash[:danger] = t :user_nil
     redirect_to signup_path
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     get_user_by_id
     redirect_to root_url unless current_user? @user
   end
-  
+
   def user_params
     params.require(:user).permit :name, :email, :phone, :role, :password,
       :password_confirmation, category_ids:[]

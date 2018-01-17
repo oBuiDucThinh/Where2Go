@@ -59,7 +59,7 @@ input[type=checkbox] {
 
 /* Login form */
 .login-form {
-  padding: 40px 0 150px 0;
+  padding: 80px 0 150px 0;
 }
 
 .image-upload {
@@ -75,6 +75,43 @@ input[type=checkbox] {
 
     &:hover {
       background-color: grey;
+      color: white;
+      transition: all 0.5s;
+    }
+  }
+}
+
+div.progress-sidebar {
+  height: 100%;
+  position: fixed;
+}
+
+.anchor {
+  padding-top: 70px;
+  margin-top: -70px;
+}
+
+div.left-nav {
+  height: 50px;
+  margin: 10px 0;
+
+  a {
+    border-radius: 4px;
+    color: black;
+    display: block;
+    font-size: 20px;
+    height: 40px  ;
+    margin: 5px 0 5px 5%;
+    padding: 7px 0 0 20px;
+    width: 95%;
+    text-decoration: none;
+
+    &:link {
+      background-color: #ddebf0;
+    }
+
+    &:hover {
+      background-color: #1dbace;
       color: white;
       transition: all 0.5s;
     }
