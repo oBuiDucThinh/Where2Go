@@ -6,8 +6,11 @@
       <p><%= t ".title1" %></p>
       <p><%= t ".trend" %></p>
     </div>
-    <div class="container">
-      <%= render partial: "events/event", collection: @events %>
+    <div class="container most-like">
+      <%= render partial: "events/event", collection: @most_like_events %>
+    </div>
+    <div class="container most-join">
+      <%= render partial: "events/event", collection: @most_join_events %>
     </div>
   </div>
   <div class="see-more">
