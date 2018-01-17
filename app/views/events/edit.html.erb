@@ -1,4 +1,4 @@
-<% if is_creator? %>
+<% if logged_in? && is_creator? %>
   <div class="container-fluid event-index">
     <div class="row new-event">
       <div class=" co-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-5 col-md-offset-5 col-sm-offset-3">
@@ -85,5 +85,5 @@
     </div>
   </div>
 <% else %>
-  <% render "shared/prevent" %>
+  <% controller.redirect_to error_path %>
 <% end %>

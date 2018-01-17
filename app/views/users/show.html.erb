@@ -1,7 +1,7 @@
 <% provide(:title, @user.name) %>
 <div class = "container user-profile">
   <div class = "row">
-    <aside class = "col-md-4">
+    <aside class = "col-md-3">
       <section>
         <h1>
           <%= @user.name %>
@@ -10,89 +10,36 @@
         <p><%= @user.phone %></p>
       </section>
     </aside>
-    <div class = "col-md-8 user-tab">
-      <ul class = "nav nav-tabs">
-        <li class = "active"><a data-toggle = "tab" href = "#join"><%= t ".join" %></a></li>
-        <li><a data-toggle = "tab" href = "#like"><%= t ".subcribe" %></a></li>
+    <div class="col-md-9 user-tab">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#like"><%= t ".like" %></a></li>
+        <li><a data-toggle="tab" href="#join"><%= t ".join" %></a></li>
         <% if @user.creator? %>
-          <li><a data-toggle = "tab" href = "#create"><%= t ".create" %></a></li>
+          <li><a data-toggle="tab" href="#create"><%= t ".create" %></a></li>
         <% end %>
       </ul>
-
-      <div class = "tab-content clearfix">
-        <div id = "join" class = "tab-pane fade in active">
-          <% @events_join.each do |event_join|%>
-            <div class="col-lg-12">
-              <div class="detailThumbnail right">
-                <div class="detailImg">
-                  <img src="/assets/event3.jpg" height="100%" >
-                  <div class="time">
-                    <p><%= event_join.event.date_start %></p>
-                    <p><%= event_join.event.date_end %></p>
-                  </div>
-                </div>
-                <div class="detailDes">
-                  <p class="title"><%= link_to event_join.event.title %></p>
-                  <p class="address"><%= event_join.event.content %></p>
-                  <p class="create"><%= t ".by" %>
-                    <span><%= event_join.event.user.name %></span>
-                    <span class="category"></span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          <%end %>
+      <div class="tab-content clearfix">
+        <div id="like" class="tab-pane fade in active interactive">
+          <% if !@like_event.empty? %>
+            <% @like_event.each do |like_event| %>
+              <%= link_to like_event.event.title, like_event.event, class: "count-in-profile" %><br>
+              <span>Like at</span> <%= like_event.created_at %><br>
+              <hr>
+            <% end %>
+          <% end %>
         </div>
-
-        <div id = "like" class = "tab-pane fade">
-          <% @events_like.each do |event_like|%>
-            <div class="col-lg-12">
-              <div class="detailThumbnail right">
-                <div class="detailImg">
-                  <img src="/assets/event3.jpg" height="100%" >
-                  <div class="time">
-                    <p><%= event_like.event.date_start %></p>
-                    <p><%= event_like.event.date_end %></p>
-                  </div>
-                </div>
-                <div class="detailDes">
-                  <p class="title"><%= link_to event_like.event.title %></p>
-                  <p class="address"><%= event_like.event.content %></p>
-                  <p class="create"><%= t ".by" %>
-                    <span><%= event_like.event.user.name %></span>
-                    <span class="category"></span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          <%end %>
+        <div id="join" class="tab-pane fade interactive">
+          <% if !@join_event.empty? %>
+            <% @join_event.each do |join_event| %>
+              <%= link_to join_event.event.title, join_event.event, class: "count-in-profile" %><br>
+              <span>Joined at</span> <%= join_event.created_at %><br>
+              <hr>
+            <% end %>
+          <% end %>
         </div>
-        <% if @user.creator? %>
-          <div id = "create" class = "tab-pane fade">
-          <% @events_created.each do |event_created|%>
-            <div class="col-lg-12">
-              <div class="detailThumbnail right">
-                <div class="detailImg">
-                  <img src="/assets/event3.jpg" height="100%" >
-                  <div class="time">
-                    <p><%= event_created.date_start %></p>
-                    <p><%= event_created.date_end %></p>
-
-                  </div>
-                </div>
-                <div class="detailDes">
-                  <p class="title"><%= link_to event_created.title %></p>
-                  <p class="address"><%= event_created.content %></p>
-                  <p class="create"><%= t ".by" %>
-                    <span><%= event_created.user.name %></span>
-                    <span class="category"></span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          <%end %>
-          </div>
-        <% end %>
+        <div id="create" class="tab-pane fade">
+          <%= render "created_event" %>
+        </div>
       </div>
     </div>
   </div>
