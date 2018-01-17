@@ -1,0 +1,12 @@
+<div class="container event-index">
+  <%= render "events/slide" %>
+  <hr>
+  <hr>
+  <div class = "row">
+    <ul>
+      <% @events.each do |event| %>
+        <%= render event %>
+      <% end %>
+    </ul>
+  </div>
+</div>

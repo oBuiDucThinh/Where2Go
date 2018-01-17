@@ -3,6 +3,8 @@ class Event < ApplicationRecord
   has_many :user_events
   has_many :users, through: :user_events
   has_many :comments, dependent: :destroy
+  scope :order_by_title, ->{order title: :asc}
+  scope :ordered_by_date_created, -> {order created_at: :asc}
   has_many :users, through: :comments
   has_many :event_categories, foreign_key: :event_id, inverse_of: :event
   has_many :categories, through: :event_categories
