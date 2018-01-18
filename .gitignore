@@ -15,7 +15,10 @@
 .byebug_history
 /test/*/*
 
-#Ignore database
+# Ignore database
 /config/database.yml
 /config/secrets.yml
 /_config.yml
+
+# Ignore cloudinary.yml
+/config/cloudinary.yml
