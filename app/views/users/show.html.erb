@@ -3,6 +3,13 @@
   <div class = "row">
     <aside class = "col-md-4">
       <section>
+      <div>
+        <% if @user.picture.present? %>
+          <%= image_tag @user.picture_url(:circle) %>
+        <% else %>
+          <img class="avatar-placeholder" src="http://www.planystech.com/wp-content/uploads/2017/03/profile-placeholder.jpg">
+        <% end %>
+      </div>
         <h1>
           <%= @user.name %>
         </h1>
