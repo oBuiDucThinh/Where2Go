@@ -13,6 +13,8 @@ en:
   success: "Successful"
   event_created: "Event created"
   update_false: "UPdate false"
+  comment_false: "Your comment couldn't be created"
+  comment_delete: "Comment has been deleted"
 
   layouts:
     application:
@@ -170,8 +172,58 @@ en:
       post: " Posted on "
       start: "START AT "
       end: "END AT "
-      comment: "Create a comment"
-      na: "N/A"
+
+  comments:
+    form:
+      comment: "Leave a comment"
+
+    comment:
+      deleted: "Your comment has been deleted"
+      close: "Close"
+
+    edit:
+      heading: "Edit your event"
+      save: "Save your changes"
+      image: "Upload your cover image"
+      event_des: "Detail description"
+      event_name: "Event name"
+      start: "Start date"
+      end: "End date"
+      des: "Description"
+      upload: "Upload Cover"
+
+    edit:
+      heading: "Edit your event"
+      save: "Save your changes"
+      image: "Upload your cover image"
+      event_des: "Detail description"
+      event_name: "Event name"
+      start: "Start date"
+      end: "End date"
+      des: "Description"
+      upload: "Upload Cover"
+
+    edit:
+      heading: "Edit your event"
+      save: "Save your changes"
+      image: "Upload your cover image"
+      event_des: "Detail description"
+      event_name: "Event name"
+      start: "Start date"
+      end: "End date"
+      des: "Description"
+      upload: "Upload Cover"
+
+    edit:
+      heading: "Edit your event"
+      save: "Save your changes"
+      image: "Upload your cover image"
+      event_des: "Detail description"
+      event_name: "Event name"
+      start: "Start date"
+      end: "End date"
+      des: "Description"
+      upload: "Upload Cover"
 
     edit:
       heading: "Edit your event"
@@ -205,7 +257,6 @@ en:
         page_name: "Edit role"
         save_changes: "Save changes"
         heading: "Edit role for user: "
-        
       index:
         page_name: "Manage Users"
         heading: "All users"
@@ -215,7 +266,6 @@ en:
         role: "Role: "
         joined_date: "Joined: "
         no_user: "no user"
-        
       user:
         user_name: "User name: "
         id: "ID: "
@@ -229,7 +279,7 @@ en:
 
       update:
         profile_updated: "Profile updated!"
-      
+
       destroy:
        user_deleted: "User deleted"
        error: "Error"
