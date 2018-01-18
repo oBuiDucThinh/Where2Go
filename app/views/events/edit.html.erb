@@ -28,6 +28,14 @@
           </div>
 
           <div class="form-label">
+            <%= f.label :address, t(".address_label"), class: "form-label anchor", id: "form-address" %>
+            <%= f.text_field :address, class: "form-input", placeholder: t(".address_holder") %>
+            <span class="help-block" id="hint_name">
+              <%= t ".detail_address"%>
+            </span>
+          </div>
+
+          <div class="form-label">
             <label class="form-label">
               <%= t ".category" %> <span class="asteriskField">*</span>
             </label>

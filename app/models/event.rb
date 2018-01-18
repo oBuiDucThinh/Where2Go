@@ -107,4 +107,7 @@ class Event < ApplicationRecord
     select("events.*, count(join_events.event_id) as joins_count")
       .joins(:join_events).group(:event_id).order("joins_count DESC").limit(4)
   end
+
+  scope :event_manage, -> {select(:id, :title, :date_start, :date_end, :user_id,
+    :created_at, :updated_at, :is_open)}
 end
