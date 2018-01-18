@@ -267,6 +267,21 @@ p.benefitDes {
   }
 }
 
+.remove-button {
+  float: right;
+  top:0;
+  background-color: $nav-bg;
+  border-radius: 0px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  color: white;
+  letter-spacing: 1px;
+  outline: none;
+  &:hover {
+    background-color: red;
+  }
+}
+
 @media screen and (max-width: 767px) {
   #myFooter {
       text-align: center;

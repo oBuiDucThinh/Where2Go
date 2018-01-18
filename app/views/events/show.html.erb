@@ -9,47 +9,27 @@
       <hr>
       <p><span class="glyphicon glyphicon-time"></span><%= t ".post" %><%= @event.created_at %></p>
       <hr>
-      <div class = "row">
-        <div class = "col-lg-12 col-md-12 col-sm-12">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
           <%= image_tag @event.picture.url, class: "event-banner" if @event.picture? %>
         </div>
       </div>
       <hr>
       <div>
         <h2><%= @event.title %></h2>
-        <p><span class = "label label-success"><%= t ".start" %></span><b> <%= @event.date_start %></b></p>
-        <p><span class = "label label-warning"><%= t ".end" %></span><b> <%= @event.date_end %></b></p>
+        <p><span class="label label-success"><%= t ".start" %></span><b> <%= @event.date_start %></b></p>
+        <p><span class="label label-warning"><%= t ".end" %></span><b> <%= @event.date_end %></b></p>
         <p class="markdown"><%= markdown @event.content %></p>
       </div>
       <hr>
 
-      <div class="well">
-        <h4><%= t ".leave_comment" %></h4>
-        <%= form_for([@event, @event.comments.build]) do |f| %>
-          <div class="field form-group">
-            <%= f.label :content %><br />
-            <%= f.text_area :content, rows: "10" %>
-          </div>
-          <div class="actions">
-            <%= f.submit t(".comment"), class:"W2Gbutton" %>
-          </div>
-        <% end %>
+      <div class="comment-form well">
+        <%= render "comments/form" %>
       </div>
       <hr>
-
-      <% @event.comments.each do |comment| %>
-      <div class="media markdown">
-        <a class="pull-left" href="#">
-        </a>
-        <div class="media-body">
-          <h4 class="media-heading">
-            <%=  comment.user_id %>
-            <small><%= comment.date_created%></small>
-          </h4>
-          <%= comment.content %>
-        </div>
+      <div class="showing-comments">
+        <%= render @event.comments %>
       </div>
-      <% end %>
     </div>
 
 
