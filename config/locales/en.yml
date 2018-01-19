@@ -15,6 +15,7 @@ en:
   update_false: "UPdate false"
   comment_false: "Your comment couldn't be created"
   comment_delete: "Comment has been deleted"
+  log_in_require: "Please log in"
 
   layouts:
     application:
