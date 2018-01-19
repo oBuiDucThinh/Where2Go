@@ -10,7 +10,7 @@
         <% if logged_in? %>
           <% if admin_user? %>
             <li>
-              <li><%= link_to "Manage", admin_admin_events_path %></li>
+              <li><%= link_to "Manage", admin_events_path %></li>
             </li>
           <% end %>
           <li class="dropdown">

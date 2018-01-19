@@ -4,14 +4,13 @@ class JoinEventsController < ApplicationController
     @user = current_user.id
     @event = params[:event_id]
     @current_event = Event.find_by id: @event
-    join = {user_id: @user, event_id: @event}
-    @new_join = JoinEvent.new join
+    @new_join = JoinEvent.new user_id: @user, event_id: @event
 
     if @new_join.save
       @temp = true
     else
-      @current_join = JoinEvent.find_by(user_id: @user, event_id: @event)
-      @current_join.destroy
+      @new_join = JoinEvent.find_by user_id: @user, event_id: @event
+      @new_join.destroy
       @temp = false
     end
     return @temp

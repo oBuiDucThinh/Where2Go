@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :users, :admin_events, concerns: :paginatable
+    resources :users, :events, concerns: :paginatable
   end
 
 end

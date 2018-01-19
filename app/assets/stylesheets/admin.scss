@@ -213,10 +213,35 @@ input:checked + .slider:before {
   }
 }
 
-#edit-event {
+.edit-event {
   padding: 0 !important;
 }
 
 .modal-open {
   padding-right: 0px !important;
+}
+
+.modal-content {
+  margin-top: 50px;
+  padding: 20px;
+
+  h1.form-title {
+    font-size: 30px !important;
+    padding-bottom: 20px;
+  }
+}
+
+.btn-admin-1 {
+  padding-left: 15px;
+}
+
+.btn-admin-2 {
+  padding-top: 105px;
+  margin-right: 15px;
+}
+
+tbody {
+  .btn {
+    outline: none !important;
+  }
 }

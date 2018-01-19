@@ -4,14 +4,13 @@ class LikeEventsController < ApplicationController
     @user = current_user.id
     @event = params[:event_id]
     @current_event = Event.find_by id: @event
-    like = {user_id: @user, event_id: @event}
-    @new_like = LikeEvent.new like
+    @new_like = LikeEvent.new user_id: @user, event_id: @event
 
     if @new_like.save
       @temp = true
     else
-      @current_like = LikeEvent.find_by(user_id: @user, event_id: @event)
-      @current_like.destroy
+      @new_like = LikeEvent.find_by user_id: @user, event_id: @event
+      @new_like.destroy
       @temp = false
     end
     return @temp

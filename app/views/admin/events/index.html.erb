@@ -13,19 +13,22 @@
           <th>Creator</th>
           <th>Status</th>
           <th>Action</th>
+          <th>Open</th>
           <th>Delete</th>
         </tr>
       </thead>
       <tbody>
         <% @event.each do |event| %>
-          <tr>
+          <tr id="event_<%= event.id %>">
             <td><%= event.id %></td>
-            <td class="event_title"><%= event.title %></td>
-            <td><%= event.date_start.strftime("%d/%m/%Y") %></td>
-            <td><%= event.date_end.strftime("%d/%m/%Y") %></td>
-            <td><%= event.created_at.strftime("%H:%M:%S %d/%m/%Y") %></td>
-            <td><%= event.updated_at.strftime("%H:%M:%S %d/%m/%Y") %></td>
-            <td><%= event.user.name %></td>
+            <td class="event_title" id="event_name_<%= event.id %>">
+              <%= event.title %>
+            </td>
+            <td id="event_date_start_<%= event.id %>"><%= event.date_start.strftime("%d/%m/%Y") %></td>
+            <td id="event_date_end_<%= event.id %>"><%= event.date_end.strftime("%d/%m/%Y") %></td>
+            <td id="event_created_at_<%= event.id %>"><%= event.created_at.strftime("%H:%M:%S %d/%m/%Y") %></td>
+            <td id="event_updated_at_<%= event.id %>"><%= event.updated_at.strftime("%H:%M:%S %d/%m/%Y") %></td>
+            <td id="event_owner_<%= event.id %>"><%= event.user.name %></td>
             <td>
               <label class="switch">
                 <input type="checkbox">
@@ -33,15 +36,20 @@
               </label>
             </td>
             <td>
-              <%= link_to edit_admin_admin_event_path(event),
+              <%= link_to edit_admin_event_path(event),
                 class: "btn btn-info", data: {toggle: "modal", target: "#edit-event", remote: true} do %>
                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> EDIT
               <% end %>
             </td>
             <td>
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#edit-event">
+              <%= link_to event_path(event), class: "btn btn-success" do %>
+                <i class="fa fa-external-link" aria-hidden="true"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to admin_event_path(event), method: :delete, class: "btn btn-danger" do %>
                 <i class="fa fa-trash-o" aria-hidden="true"></i>
-              </button>
+              <% end %>
             </td>
           </tr>
         <% end %>

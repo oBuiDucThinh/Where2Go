@@ -196,6 +196,13 @@ en:
       new? : "New user? "
       sign_up: "Sign up now!"
 
+  admin:
+    admin_events:
+      edit:
+        address_holder: "200, Xa Dan Street, Dong Da, Ha Noi"
+        save: "Save changes"
+        heading: "Edit this event"
+
   app_name: "Where2Go"
 
   shared:
