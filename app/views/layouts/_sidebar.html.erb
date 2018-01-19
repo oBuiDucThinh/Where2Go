@@ -1,0 +1,26 @@
+<div class="container-fluid admin-panel">
+  <div class="wrapper">
+    <div>
+      <ul class="nav top-nav side-nav nav-tabs">
+        <li class="active">
+          <%= link_to "#" do %>
+            <i class="fa fa-fw fa-dashboard"></i>
+            <%= t ".dashboard" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_users_path do %>
+            <i class="fa fa-fw fa-table"></i>
+            <%= t ".manage_users" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "#" do %>
+            <i class="fa fa-fw fa-bar-chart-o"></i>
+            <%= t ".charts" %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

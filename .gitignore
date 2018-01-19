@@ -19,3 +19,6 @@
 /config/database.yml
 /config/secrets.yml
 /_config.yml
+
+#Ignore picture
+/public/uploads/event/picture/*
