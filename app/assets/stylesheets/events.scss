@@ -1,7 +1,26 @@
 .event-index {
-  margin-top: 80px;
   font-family: 'Montserrat Alternates', sans-serif;
+  margin-top: 80px;
 }
 .new-event {
   padding: 20px 0 150px 0;
+}
+
+.clear {
+  background-color: transparent;
+  border: none;
+}
+
+.hr-event {
+  margin: 5px 0;
+}
+
+.count {
+  margin: 0;
+}
+
+.date {
+  font-size: 12px;
+  margin: 3px 0;
+  text-align: center;
 }

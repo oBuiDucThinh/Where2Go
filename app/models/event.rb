@@ -1,7 +1,9 @@
 class Event < ApplicationRecord
   belongs_to :user, foreign_key: :user_id
-  has_many :user_events
-  has_many :users, through: :user_events
+  has_many :like_events
+  has_many :users, through: :like_events
+  has_many :join_events
+  has_many :users, through: :join_events
   has_many :comments, dependent: :destroy
   has_many :users, through: :comments
   has_many :event_categories, foreign_key: :event_id, inverse_of: :event
