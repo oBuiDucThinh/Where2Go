@@ -4,28 +4,58 @@ class EventsController < ApplicationController
   before_filter :require_permission, only: :edit
 
   def index
-    @events_close = Event.load_event_close.ordered_by_date_created
-    @events_open = Event.load_event_open.ordered_by_date_created
-    @events_coming = Event.load_event_coming.ordered_by_date_created
-    @q = Event.ransack params[:q]
-    @events = @q.result(distinct: true).page params[:page]
+    @events_close = Event.load_event_close.ordered_by_date_created.limit(4)
+    @events_open = Event.load_event_open.ordered_by_date_created.limit(4)
+    @events_coming = Event.load_event_coming.ordered_by_date_created.limit(4)
+    @filterrific = initialize_filterrific(
+      Event,
+      params[:filterrific],
+      select_options: {
+        sorted_by: Event.options_for_sorted_by,
+        with_category_id: Category.options_for_select,
+        with_city_id: City.options_for_select,
+        sorted_by_date_start: Event.options_for_sorted_by
+      },
+      persistence_id: false,
+      default_filter_params: {},
+      available_filters: [:sorted_by, :sorted_by_date_start,
+        :with_category_id, :with_city_id, :with_date_start_gte],
+    ) or return
+
+    @events = @filterrific.find.page(params[:page]).per(12)
+
     respond_to do |format|
       format.html
-      format.json { render json: @events }
+      format.js
     end
+
+    rescue ActiveRecord::RecordNotFound => e
+      puts "Had to reset filterrific params: #{ e.message }"
+      redirect_to(reset_filterrific_url(format: :html)) and return
   end
 
   def search
-    index
+    @q = Event.ransack params[:q]
+    @events_search = @q.result(distinct: true).page params[:page]
+    respond_to do |format|
+      format.html
+      format.json {render json: @events_search}
+    end
     render :search
   end
 
-
   def show
     @event_categories = @event.event_categories
+    @event_cities = @event.event_cities
     @event_owner = @event.user.name
     @event_owner_id = @event.user.id
     @comments = current_user.comments.build if user_signed_in?
+    if request.xhr?
+      render json: {
+        latitude: @event.latitude,
+        longitude: @event.longitude
+      }
+    end
   end
 
   def new
@@ -58,8 +88,12 @@ class EventsController < ApplicationController
   end
 
   def require_permission
-    if current_user != Event.find_by(params[:id]).user
-      redirect_to error_path
+    if user_signed_in?
+      if current_user != Event.find_by(params[:id]).user
+        redirect_to error_path
+      end
+    else
+      redirect_to new_user_path
     end
   end
 
@@ -75,6 +109,6 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :content, :date_start, :date_end,
-      :is_open, :picture, category_ids:[], city_ids:[])
+      :is_open, :address, :picture, category_ids:[], city_ids:[])
   end
 end

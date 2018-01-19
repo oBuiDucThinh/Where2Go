@@ -1,0 +1,6 @@
+if(<%= @temp %>){
+  $('#like_<%= @event %>').addClass('fa-heart-press');
+} else {
+  $('#like_<%= @event %>').removeClass('fa-heart-press');
+}
+$('#like_count_<%= @event %>').html('<%= @current_event.like_events.count %>');

@@ -1,0 +1,7 @@
+$("#edit-event").modal("hide");
+$("#event_name_<%= @event.id %>").html("<%= @event.title %>");
+$("#event_date_start_<%= @event.id %>").html("<%= @event.date_start.strftime("%d/%m/%Y") %>");
+$("#event_date_end_<%= @event.id %>").html("<%= @event.date_end.strftime("%d/%m/%Y") %>");
+$("#event_created_at_<%= @event.id %>").html("<%= @event.created_at.strftime("%H:%M:%S %d/%m/%Y") %>");
+$("#event_updated_at_<%= @event.id %>").html("<%= @event.updated_at.strftime("%H:%M:%S %d/%m/%Y") %>");
+$("#event_owner_<%= @event.id %>").html("<%= @event.user.name %>");

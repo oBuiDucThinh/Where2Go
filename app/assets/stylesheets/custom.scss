@@ -2,7 +2,7 @@
 @import 'bootstrap';
 @import 'font-awesome';
 @import 'variable_color';
-@import "simplemde.min";
+@import 'simplemde.min';
 
 @mixin box-sizing {
   -moz-box-sizing: border-box;
@@ -15,10 +15,6 @@ html, body {
   overflow-x: hidden;
   padding: 0;
   width: 100%;
-}
-
-.show-alert {
-  margin: 60px 0 0 0;
 }
 
 .user-profile {

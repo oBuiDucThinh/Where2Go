@@ -19,5 +19,7 @@
 /config/database.yml
 /config/secrets.yml
 /_config.yml
+
 # Ignore cloudinary
 /config/cloudinary.yml
+/public/*/*

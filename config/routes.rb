@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
   get "/error", to: "static_pages#error"
   resources :events do
-    resources :comments
     collection do
       match "search" => "events#search", via: [:get, :post], as: :search
     end
+    resources :comments, :like_events, :join_events
   end
+
   resources :users
 
   concern :paginatable do
@@ -21,8 +22,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "statistics#index"
-    resources :users, concerns: :paginatable
     resources :statistics
+    resources :users, :events, concerns: :paginatable
   end
 
 end

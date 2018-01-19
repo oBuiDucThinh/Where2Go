@@ -10,18 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180118023131) do
-
-  create_table "ahoy_events", force: :cascade do |t|
-    t.integer  "visit_id"
-    t.integer  "user_id"
-    t.string   "name"
-    t.text     "properties"
-    t.datetime "time"
-    t.index ["name", "time"], name: "index_ahoy_events_on_name_and_time"
-    t.index ["user_id", "name"], name: "index_ahoy_events_on_user_id_and_name"
-    t.index ["visit_id", "name"], name: "index_ahoy_events_on_visit_id_and_name"
-  end
+ActiveRecord::Schema.define(version: 20180119145821) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -75,7 +64,28 @@ ActiveRecord::Schema.define(version: 20180118023131) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.string   "picture"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address"
+    t.integer  "like_count"
+    t.integer  "join_count"
     t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "join_events", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "like_events", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_like_events_on_event_id"
+    t.index ["user_id"], name: "index_like_events_on_user_id"
   end
 
   create_table "user_categories", force: :cascade do |t|
@@ -86,17 +96,6 @@ ActiveRecord::Schema.define(version: 20180118023131) do
     t.index ["category_id"], name: "index_user_categories_on_category_id"
     t.index ["user_id", "category_id"], name: "index_user_categories_on_user_id_and_category_id", unique: true
     t.index ["user_id"], name: "index_user_categories_on_user_id"
-  end
-
-  create_table "user_events", force: :cascade do |t|
-    t.boolean  "join"
-    t.boolean  "like"
-    t.integer  "user_id"
-    t.integer  "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_user_events_on_event_id"
-    t.index ["user_id"], name: "index_user_events_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -115,8 +114,6 @@ ActiveRecord::Schema.define(version: 20180118023131) do
     t.string   "name"
     t.string   "phone"
     t.integer  "role"
-    t.string   "provider"
-    t.string   "uid"
     t.string   "picture"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -1,0 +1,80 @@
+<% @created_event.each do |event|%>
+<div class="col-md-4 col-lg-4 col-sm-6 hero-feature">
+  <div class="thumbnail">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <%= image_tag event.picture, class: "event-banner" %>
+      </div>
+    </div>
+    <div class="caption">
+      <h3 class="event_title" ><%= link_to event.title, event %></h3>
+      <p class="event_title"><%= event.content %></p>
+      <hr class="hr-event">
+      <div class="row">
+        <div class="col-lg-5 col-md-5">
+          <p class="date"><%= event.date_start %></p>
+        </div>
+        <div class="col-lg-5 col-md-5 col-lg-offset-2">
+          <p class="date"><%= event.date_end %></p>
+        </div>
+      </div>
+      <hr class="hr-event">
+      <div>
+        <div class="row equal">
+        <% if user_signed_in? && like?(event.id) %>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <%= button_to event_like_events_path(event.id), remote: true, class: "clear" do %>
+              <i class="fa fa-heart fa-heart-press" id="like_<%= event.id %>" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <%= button_to event_like_events_path(event.id), remote: true, class: "clear" do %>
+              <i class="fa fa-heart" id="like_<%= event.id %>" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        <% end %>
+        <% if user_signed_in? && join?(event.id) %>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <%= button_to event_join_events_path(event.id), remote: true, class: "clear" do %>
+              <i class="fa fa-sign-in fa-sign-in-press" id="join_<%= event.id %>" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <%= button_to event_join_events_path(event.id), remote: true, class: "clear" do %>
+              <i class="fa fa-sign-in" id="join_<%= event.id %>" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        <% end %>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <%= link_to event, class: "more btn" do %>
+              <span>More</span>
+            <% end %>
+          </div>
+        </div>
+        <div class="row equal">
+          <div class="col-lg-4 col-md-4">
+            <p class="count" id="like_count_<%= event.id %>"><%= event.like_events.count %></p>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <p class="count" id="join_count_<%= event.id %>"><%= event.join_events.count %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 profile-button">
+      <%= link_to edit_event_path(event), class: "edit-button" do %>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> EDIT
+      <% end %>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 profile-button">
+      <%= link_to "#", class: "close-button" do %>
+        <i class="fa fa-times-circle" aria-hidden="true"></i> CLOSE
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>

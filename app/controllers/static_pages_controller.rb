@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
-    @events = Event.load_event_open.ordered_by_date_created.limit Settings.static_pages.limitation.maximum
+    @most_like_events = Event.most_like
+    @most_join_events = Event.most_join
   end
 
   def contact

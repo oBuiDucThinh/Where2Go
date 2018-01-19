@@ -35,4 +35,41 @@
       </div>
     </div>
   </div>
+  <hr>
+  <h2 class="text-center">All event</h2>
+    <%= form_for_filterrific @filterrific do |f| %>
+      <div class="row">
+        <div class="col-lg-3 col-md-3">
+          <label>City</label>
+          <div class="dropdown-filter">
+            <%= f.select :with_city_id, @filterrific.select_options[:with_city_id],
+              {include_blank: "- Any -"} %>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3">
+          <label>Category</label>
+          <div class="dropdown-filter">
+            <%= f.select :with_category_id, @filterrific.select_options[:with_category_id],
+              {include_blank: "- Any -"} %>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3">
+          <label>Sorted by</label>
+            <div class="dropdown-filter">
+              <%= f.select :sorted_by, @filterrific.select_options[:sorted_by] %>
+            </div>
+          </div>
+        <div class="col-lg-3 col-md-3">
+          <label>Event Start date</label>
+          <div class="dropdown-filter">
+            <%= f.text_field :with_date_start_gte, class: "js-datepicker" %>
+          </div>
+        </div>
+      </div>
+      <div class="row reset-filter">
+        <%= link_to "Reset filters", reset_filterrific_url %>
+      </div>
+    <% end %>
+  <hr>
+  <%= render(partial: "events/event_list", locals: {events: @events}) %>
 </div>

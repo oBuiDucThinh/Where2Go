@@ -3,7 +3,10 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require turbolinks
-//= require_tree .
 //= require simplemde.min
 //= require chartkick
 //= require social-share-button
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.en-GB.js
+//= require filterrific/filterrific-jquery
+//= require_tree .

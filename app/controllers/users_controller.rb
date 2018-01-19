@@ -8,7 +8,9 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @events_created = @user.events
+    @like_event = @user.like_events
+    @join_event = @user.join_events
+    @created_event = @user.events
     return if @user
     flash[:danger] = t :user_nil
     redirect_to signup_path

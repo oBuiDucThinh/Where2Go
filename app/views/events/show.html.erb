@@ -10,6 +10,12 @@
       <hr>
       <p><span class="glyphicon glyphicon-time"></span><%= t ".post" %><%= @event.created_at %></p>
       <hr>
+      <% @event_cities.each do |e| %>
+        <li>
+          <%= e.city.city_name%>
+        </li>
+      <% end %>
+      <hr>
       <div class = "row">
         <div class="status">
           <% if @event.is_open %>
@@ -25,10 +31,14 @@
       <hr>
       <div>
         <h2><%= @event.title %></h2>
-        <p><span class="label label-success"><%= t ".start" %></span><b> <%= @event.date_start %></b></p>
-        <p><span class="label label-warning"><%= t ".end" %></span><b> <%= @event.date_end %></b></p>
+        <p><span class="label label-success"><%= t ".start" %></span> <b><%= @event.date_start %></b></p>
+        <p><span class="label label-warning"><%= t ".end" %></span> <b><%= @event.date_end %></b></p>
         <p class="markdown"><%= markdown @event.content %></p>
       </div>
+      <hr>
+      <div id="map" class="map">
+      </div>
+      <hr>
       <div class="share-event">
         <hr>
         <h3>Share this event!</h3>
@@ -37,7 +47,6 @@
           allow_sites: %w(twitter facebook reddit pinterest linkedin) %>
       </div>
       <hr>
-
       <% if user_signed_in? %>
         <div class="comment-form well">
           <%= render "comments/form" %>
@@ -48,7 +57,6 @@
         <%= render @event.comments %>
       </div>
     </div>
-
 
     <div class="col-md-4">
       <div class="well">

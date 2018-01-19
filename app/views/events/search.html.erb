@@ -1,8 +1,10 @@
 <div class="container event-index">
-  <h3>Search result</h3>
+  <h1 class="text-center">Search result</h1>
+  <h3 class="text-center">We have found <%= pluralize(@events_search.count, "event") %> for you!</h3>
+  <hr>
   <div class = "row">
     <ul>
-      <% @events.each do |event| %>
+      <% @events_search.each do |event| %>
         <%= render event %>
       <% end %>
     </ul>
