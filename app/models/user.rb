@@ -2,8 +2,10 @@ class User < ApplicationRecord
   attr_accessor :remember_token
   attr_accessor :skip_password_validation
   has_many :events
-  has_many :user_events
-  has_many :events, through: :user_events
+  has_many :like_events
+  has_many :events, through: :like_events
+  has_many :join_events
+  has_many :events, through: :join_events
   has_many :comments, dependent: :destroy
   has_many :events, through: :comments
   has_many :categories, through: :user_categories

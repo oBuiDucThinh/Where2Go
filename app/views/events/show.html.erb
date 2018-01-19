@@ -1,6 +1,5 @@
 <div class="container event-index">
   <div class="row">
-
     <div class="col-lg-8">
       <h1><%= @event.title %></h1>
       <p class="lead">
@@ -8,6 +7,12 @@
       </p>
       <hr>
       <p><span class="glyphicon glyphicon-time"></span><%= t ".post" %><%= @event.created_at %></p>
+      <hr>
+      <% @event_cities.each do |e| %>
+        <li>
+          <%= e.city.city_name%>
+        </li>
+      <% end %>
       <hr>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -17,12 +22,11 @@
       <hr>
       <div>
         <h2><%= @event.title %></h2>
-        <p><span class="label label-success"><%= t ".start" %></span><b> <%= @event.date_start %></b></p>
-        <p><span class="label label-warning"><%= t ".end" %></span><b> <%= @event.date_end %></b></p>
+        <p><span class="label label-success"><%= t ".start" %></span> <b><%= @event.date_start %></b></p>
+        <p><span class="label label-warning"><%= t ".end" %></span> <b><%= @event.date_end %></b></p>
         <p class="markdown"><%= markdown @event.content %></p>
       </div>
       <hr>
-
       <div class="comment-form well">
         <%= render "comments/form" %>
       </div>
@@ -31,8 +35,6 @@
         <%= render @event.comments %>
       </div>
     </div>
-
-
     <div class="col-md-4">
       <div class="well">
         <h4><%= t ".search" %></h4>
@@ -45,7 +47,6 @@
           </span>
         </div>
       </div>
-
       <div class="well">
         <h4><%= t ".categories" %></h4>
         <div class="row">
@@ -62,5 +63,4 @@
       </div>
     </div>
   </div>
-
 </div>

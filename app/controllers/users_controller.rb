@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, :correct_user, :get_user_by_id,
     only: [:edit, :update]
-  
+
   def new
     @user = User.new
     @categories = Category.all
@@ -10,9 +10,6 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @events_join = @user.user_events.where(join:true)
-    @events_like = @user.user_events.where(like:true)
-    @events_created = @user.events
     return if @user
     flash[:danger] = t :user_nil
     redirect_to signup_path
@@ -25,7 +22,7 @@ class UsersController < ApplicationController
       flash[:info] = t :acc_activate
       redirect_to root_url
     else
-      flash[:info] = "You failed"
+      flash[:info] = t :you_failed
       render :new
     end
   end
@@ -40,7 +37,7 @@ class UsersController < ApplicationController
     @user.categories.build
 
     if @user.update_attributes edit_user_params
-      flash[:success] = t ".profile_updated"
+      flash[:success] = t :profile_updated
       redirect_to @user
     else
       render :edit
@@ -61,7 +58,7 @@ class UsersController < ApplicationController
     get_user_by_id
     redirect_to root_url unless current_user? @user
   end
-  
+
   def user_params
     params.require(:user).permit :name, :email, :phone, :role, :password,
       :password_confirmation, category_ids:[]
