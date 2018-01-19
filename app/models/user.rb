@@ -7,7 +7,6 @@ class User < ApplicationRecord
   attr_accessor :skip_password_validation
   has_many :events
   has_many :comments, dependent: :destroy
-  has_many :events, through: :comments
 
   enum role: [:normal, :creator, :admin]
 
