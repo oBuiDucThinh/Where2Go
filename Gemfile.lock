@@ -312,12 +312,12 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   config
   devise
-  groupdate
   faker (~> 1.7.3)
   filterrific
   fog-aws (= 2.0.0)
   font-awesome-rails
   geocoder
+  groupdate
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails

@@ -6,11 +6,13 @@
       <p><%= t ".title1" %></p>
       <p><%= t ".trend" %></p>
     </div>
-    <h3 class="text-center">Most liked events</h3>
+    <h3 class="text-center">MOST LIKED EVENTS</h3>
+    <div class="separate"></div>
     <div class="container most-like">
       <%= render partial: "events/event", collection: @most_like_events %>
     </div>
-    <h3 class="text-center">Most joined events</h3>
+    <h3 class="text-center">MOST JOINED EVENTS</h3>
+    <div class="separate"></div>
     <div class="container most-join">
       <%= render partial: "events/event", collection: @most_join_events %>
     </div>

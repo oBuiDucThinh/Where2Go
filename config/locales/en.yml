@@ -138,9 +138,9 @@ en:
   events:
     index:
       all: "All events"
-      happen: "Happening"
-      close: "Closed"
-      soon: "Coming soon"
+      happen: "HAPPENING"
+      close: "CLOSED"
+      soon: "COMING SOON"
 
     event:
       happening: "Happening"
@@ -185,8 +185,8 @@ en:
       categories: "Categories"
       leave_comment: "Leave a comment"
       post: " Posted on "
-      start: "START AT "
-      end: "END AT "
+      start: "START AT"
+      end: "END AT"
 
   comments:
     form:
@@ -303,7 +303,7 @@ en:
         you_sure: "You sure?"
 
       update:
-        profile_updated: "Profile updated!"
+        profile_updated: "Profile updated! Please log in again!"
 
       destroy:
        user_deleted: "User deleted"

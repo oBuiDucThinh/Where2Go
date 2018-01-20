@@ -29,6 +29,19 @@
   }
 }
 
+h3.text-center {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+div.separate {
+  margin: auto;
+  width: 150px;
+  height: 2px;
+  background-color: black;
+}
+
 div.detailThumbnail {
   background-color: #f0efed;
   display: flex;

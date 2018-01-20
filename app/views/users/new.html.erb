@@ -23,14 +23,6 @@
         <%= f.select :role, ["normal", "creator"], {}, {class: "form-input"} %>
       </div>
 
-      <%= f.label t(".category"), class: "form-label" %>
-      <%= f.collection_check_boxes :category_ids, @categories, :id, :name do |t| %>
-        <div class="checkbox form-label">
-          <%= t.check_box %>
-          <%= t.label %>
-        </div>
-      <% end %>
-
       <%= f.submit t(".sign_up"), class: "W2Gbutton form-label" %>
     <% end %>
   </div>

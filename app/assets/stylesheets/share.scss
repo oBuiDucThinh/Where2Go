@@ -231,9 +231,12 @@ img.event-banner {
   border-bottom: 2px solid $alto;
   text-align:center;
   > li {
+    color: black;
     display:inline-block;
     float:none;
     font-size: 20px;
+    letter-spacing: 2px;
+    width: 300px;
     zoom:1;
     &.active {
       > a {
@@ -256,7 +259,7 @@ img.event-banner {
 
     > a {
       border: none;
-      color: $dove-gray;
+      color: black;
     }
 
     > a {
