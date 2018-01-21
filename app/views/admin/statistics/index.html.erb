@@ -2,7 +2,7 @@
   <div class="container-fluid statistic-overview" id="back-to-top">
     <h2 class="text-center statistic-header">Overview</h2>
     <div class="row overview-card">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="card bg-cyan">
           <a href="#user-by-day">
             <div class="card-body">
@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="card bg-cyan">
           <a href="#event-by-day">
             <div class="card-body">
@@ -56,7 +56,7 @@
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="card bg-cyan">
           <a href="#comment-by-day">
             <div class="card-body">
@@ -73,33 +73,6 @@
                     <div class="col-md-2 icon-col">
                       <div class="media-right icon">
                         <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card bg-cyan">
-          <a href="#creator-profile">
-            <div class="card-body">
-              <div class="card-block">
-                <div class="media">
-                  <div class="row">
-                    <div class="col-md-10">
-                      <div class="media-body statistic-content">
-                        <h2><%= @user.name%></h2>
-                        <h4>Created most events</h4>
-                        <span>This member has created <%= @user.events.count%> events</span>
-                      </div>
-                    </div>
-                    <div class="col-md-2 icon-col">
-                      <div class="media-right icon">
-                        <i class="fa fa-user-o" aria-hidden="true"></i>
                       </div>
                     </div>
                   </div>
@@ -127,20 +100,6 @@
       <h3 class="text-center chart-header" id="creator-profile">
         Most events on our page have been created by
       </h3>
-
-      <div class="profile-card">
-        <% if @user.picture.present? %>
-          <%= image_tag @user.picture_url(:circle), class: "info-center" %>
-        <% else %>
-          <img class="avatar-placeholder" src="http://www.planystech.com/wp-content/uploads/2017/03/profile-placeholder.jpg">
-        <% end %>
-        <div class="contributor-info">
-          <h1 class="text-center"><%= @user.name %></h1>
-          <small>This user has been with us since</small>
-          <h3><%= @user.created_at.to_date %></h3>
-          <p>This member has created totally: <%= @user.events.count %> events </p>
-        </div>
-      </div>
     </div>
   </div>
 

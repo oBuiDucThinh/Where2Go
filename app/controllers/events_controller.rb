@@ -1,12 +1,8 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: :show
   before_action :find_event, only: [:show, :edit, :update]
-  before_filter :require_permission, only: :edit
 
   def index
-    @events_close = Event.load_event_close.ordered_by_date_created.limit(4)
-    @events_open = Event.load_event_open.ordered_by_date_created.limit(4)
-    @events_coming = Event.load_event_coming.ordered_by_date_created.limit(4)
     @filterrific = initialize_filterrific(
       Event,
       params[:filterrific],
@@ -22,7 +18,7 @@ class EventsController < ApplicationController
         :with_category_id, :with_city_id, :with_date_start_gte],
     ) or return
 
-    @events = @filterrific.find.page(params[:page]).per(12)
+    @events = @filterrific.find.page(params[:page]).per(30)
 
     respond_to do |format|
       format.html

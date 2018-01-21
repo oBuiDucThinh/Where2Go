@@ -117,15 +117,15 @@ class Event < ApplicationRecord
   end
 
   def Event.most_like
-    select("events.*, count(like_events.event_id) as likes_count")
+    select("events.*, count(like_events.event_id) as likes_count").group("events.id")
       .joins(:like_events).group(:event_id).order("likes_count DESC").limit(4)
   end
 
   def Event.most_join
-    select("events.*, count(join_events.event_id) as joins_count")
+    select("events.*, count(join_events.event_id) as joins_count").group("events.id")
       .joins(:join_events).group(:event_id).order("joins_count DESC").limit(4)
   end
 
-  scope :event_manage, -> {select(:id, :title, :date_start, :date_end, :user_id,
+  scope :event_manage, -> {select(:id, :title, :content, :address, :date_start, :date_end, :user_id,
     :created_at, :updated_at, :is_open)}
 end

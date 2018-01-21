@@ -17,7 +17,7 @@
 
 #Ignore database
 /config/database.yml
-/config/secrets.yml
+
 /_config.yml
 
 # Ignore cloudinary

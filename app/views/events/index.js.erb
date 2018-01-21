@@ -1,4 +1,6 @@
 <% js = escape_javascript(
-  render(partial: 'events/event_list', locals: { events: @events })
+  render(partial: 'events/event_list_ajx', locals: { events: @events })
 ) %>
-$("#filterrific_results").html("<%= js %>");
+var temp = $('#filterrific_results').find('.active').attr('id');
+$('#filterrific_results').html('<%= js %>');
+$('#' + temp).addClass('in active');

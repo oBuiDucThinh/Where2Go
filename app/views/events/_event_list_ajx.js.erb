@@ -1,6 +1,6 @@
 <div class="row" id="filterrific_results">
   <div class="tab-content clearfix row">
-    <div id="open" class="tab-pane fade in active">
+    <div id="open" class="tab-pane fade">
       <div class="row">
         <% @events.each do |event| %>
           <% if event.is_open && event.date_start <= Date.today%>
@@ -10,7 +10,7 @@
       </div>
     </div>
     <div id="coming" class="tab-pane fade">
-      <div class="row">
+      <div class="row" id="row-coming">
         <% @events.each do |event| %>
           <% if event.is_open && event.date_start > Date.today %>
             <%= render event %>

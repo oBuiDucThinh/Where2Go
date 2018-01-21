@@ -30,7 +30,7 @@
             <% if user_signed_in? %>
               <% if admin_user? %>
                 <li>
-                  <li><%= link_to "Manage", admin_events_path %></li>
+                  <li><%= link_to "Manage", admin_statistics_path %></li>
                 </li>
               <% end %>
               <li class="dropdown">
@@ -52,7 +52,7 @@
               </li>
             <% else %>
               <%= link_to t(".log_in"), new_user_session_path, class: "btn btn-default navbar-btn" %>
-              <%= link_to t(".sign_up"), new_user_path, class: "btn btn-default navbar-btn signup" %>
+              <%= link_to t(".sign_up"), new_user_registration_path, class: "btn btn-default navbar-btn signup" %>
             <% end %>
           </ul>
         </nav>

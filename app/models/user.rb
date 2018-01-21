@@ -30,9 +30,4 @@ class User < ApplicationRecord
   scope :load_to_show_ordered_by_name,
     ->{select :id, :name, :email, :role, :created_at and order name: :asc}
   scope :new_user_this_month, ->{where :created_at => Time.now.beginning_of_month..Time.now.end_of_month}
-
-  def User.has_most_events
-    select("users.*, count(events.id) as events_count")
-    .joins(:events).group(:user_id).order("events_count DESC").limit(1).first
-  end
 end

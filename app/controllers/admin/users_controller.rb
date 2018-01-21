@@ -1,7 +1,7 @@
 class Admin::UsersController < Admin::AdminController
   before_action :verify_admin
   before_action :load_user, except: :index
-  
+
   def show
   end
 
@@ -18,10 +18,11 @@ class Admin::UsersController < Admin::AdminController
 
     if @user.update_attributes update_user_params
       flash[:success] = t ".profile_updated"
-      redirect_to admin_user_path
     else
-      render :edit
+      flash[:danger] = t ".error"
     end
+    redirect_to admin_users_path
+
   end
 
   def destroy
@@ -34,7 +35,7 @@ class Admin::UsersController < Admin::AdminController
   end
 
   private
-  
+
   def update_user_params
     params.require(:user).permit :role
   end
@@ -50,5 +51,4 @@ class Admin::UsersController < Admin::AdminController
       flash[:error] = t ".no_user"
     end
   end
-
 end

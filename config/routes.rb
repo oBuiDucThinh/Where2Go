@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :comments, :like_events, :join_events
   end
 
-  resources :users
+  resources :users, only: [:show, :edit, :update]
 
   concern :paginatable do
     get "(page/:page)", action: :index, on: :collection, as: ""

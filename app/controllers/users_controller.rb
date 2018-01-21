@@ -53,7 +53,7 @@ class UsersController < ApplicationController
 
   def edit_user_params
     params.require(:user).permit :name, :email, :phone, :password,
-      :password_confirmation
+      :password_confirmation, :picture
   end
 
   def get_user_by_id
