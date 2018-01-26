@@ -109,7 +109,7 @@ en:
 
     show:
       join: "Joined events"
-      subcribe: "Subcribed events"
+      like: "Liked events"
       create: "Created events"
       by: "By"
 
@@ -170,8 +170,8 @@ en:
       categories: "Categories"
       leave_comment: "Leave a comment"
       post: " Posted on "
-      start: "START AT "
-      end: "END AT "
+      start: "START AT"
+      end: "END AT"
 
   comments:
     form:
@@ -251,12 +251,14 @@ en:
   shared:
     prevent:
       content: "You do not have permission on this page"
+
   admin:
     users:
       edit:
         page_name: "Edit role"
         save_changes: "Save changes"
         heading: "Edit role for user: "
+
       index:
         page_name: "Manage Users"
         heading: "All users"
@@ -266,6 +268,7 @@ en:
         role: "Role: "
         joined_date: "Joined: "
         no_user: "no user"
+
       user:
         user_name: "User name: "
         id: "ID: "
